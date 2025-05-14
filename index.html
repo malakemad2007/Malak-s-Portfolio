@@ -7,60 +7,104 @@
   <meta name="description" content="Malak Emad's portfolio showcasing engineering projects, STEM achievements, and leadership experiences.">
   <meta name="keywords" content="Malak Emad, engineering portfolio, STEM, scholarships, web development">
   <meta name="author" content="Malak Emad">
+  <!-- Open Graph Meta Tags for SEO -->
+  <meta property="og:title" content="Malak Emad | Personal Portfolio">
+  <meta property="og:description" content="Explore Malak Emad's portfolio showcasing engineering projects, STEM achievements, and leadership experiences.">
+  <meta property="og:image" content="assets/hero-image.jpg">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Malak Emad | Personal Portfolio">
+  <meta name="twitter:description" content="Explore Malak Emad's portfolio showcasing engineering projects, STEM achievements, and leadership experiences.">
+  <meta name="twitter:image" content="assets/hero-image.jpg">
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="assets/hero-image.jpg" as="image">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Caveat:wght@400;700&display=swap" as="style">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/ce04bd97e3.js" crossorigin="anonymous"></script>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&family=Italianno&display=swap" rel="stylesheet">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* ========== CSS Variables ========== */
     :root {
-      --white: #ffffff;
-      --pastel-purple: #d8b4fe;
+      /* Original Colors (unchanged for non-button elements) */
+      --primary-color: #7e22ce;
+      --secondary-color: #d8b4fe;
+      --accent-color: #fef08a;
       --pastel-blue: #a5b4fc;
-      --pastel-yellow: #fef08a;
-      --dark-purple: #7e22ce;
-      --text-color: #333333;
-      --light-gray: #f5f5f5;
-      --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-      --border-radius: 12px;
-      /* Dark Mode Variables */
-      --dark-bg: #1a1a1a;
-      --dark-text: #e0e0e0;
-      --dark-card: #2c2c2c;
+      --background-light: #ffffff;
+      --background-dark: #1a1a1a;
+      --text-light: #f8f9fa;
+      --text-dark: #333333;
       /* Experience Category Colors */
       --leadership-color: #d8b4fe;
       --tech-color: #a5b4fc;
       --social-media-color: #fef08a;
-      --events-color: #7e22ce;
+      --events-color: #e9d5ff;
+      /* Button Colors (lighter, theme-matching) */
+      --btn-primary-bg: #9333ea; /* Lighter vibrant purple */
+      --btn-primary-hover: #a855f7; /* Slightly lighter purple */
+      --btn-accent-bg: #e9d5ff; /* Pastel purple */
+      --btn-accent-hover: #d8b4fe; /* Matches secondary-color */
+      --btn-text: #ffffff; /* White for primary buttons */
+      --btn-text-accent: #333333; /* Dark for accent buttons */
+      /* Shadows */
+      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --shadow-glow: 0 0 20px rgba(75, 0, 130, 0.2);
+      /* Radii */
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px; /* Increased for popups */
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.4s ease;
+      /* Typography */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 2rem;
+      --leading-tight: 1.3;
+      --leading-relaxed: 1.6;
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 3rem;
+      --space-xl: 4.5rem;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      --background-light: #1a1a1a;
+      --text-dark: #f8f9fa;
+      --primary-color: #c084fc;
+      --btn-primary-bg: #a855f7;
+      --btn-primary-hover: #9333ea;
+      --btn-accent-bg: #c4b5fd;
+      --btn-accent-hover: #a855f7;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
     }
 
     body {
-      background-color: var(--white);
-      color: var(--text-color);
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      background-color: var(--background-light);
+      color: var(--text-dark);
+      line-height: var(--leading-relaxed);
+      font-size: var(--text-base);
       overflow-x: hidden;
-    }
-
-    body.dark-mode {
-      background-color: var(--dark-bg);
-      color: var(--dark-text);
     }
 
     a {
@@ -68,33 +112,131 @@
       color: inherit;
     }
 
+    /* ========== Focus Styles ========== */
+    *:focus {
+      outline: none;
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
     /* ========== Utility Classes ========== */
-    .section-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
+    .container {
+      width: min(1200px, 100% - 2rem);
+      margin-inline: auto;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      background: linear-gradient(135deg, var(--dark-purple), var(--pastel-purple));
-      color: var(--white);
-      border-radius: 25px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
+      justify-content: center;
+      gap: var(--space-xs);
+      padding: 0.75rem 1.5rem;
+      background: var(--btn-bg, var(--btn-primary-bg));
+      color: var(--btn-text);
+      border: none;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: var(--text-sm);
       cursor: pointer;
+      transition: background var(--transition-normal), transform var(--transition-fast), box-shadow var(--transition-normal);
+      box-shadow: var(--shadow-sm);
     }
 
     .btn:hover {
-      background: var(--pastel-purple);
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: var(--btn-hover, var(--btn-primary-hover));
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      --btn-bg: var(--btn-primary-bg);
+      --btn-hover: var(--btn-primary-hover);
+      --btn-text: var(--btn-text);
+    }
+
+    .btn-accent {
+      --btn-bg: var(--btn-accent-bg);
+      --btn-hover: var(--btn-accent-hover);
+      --btn-text: var(--btn-text-accent);
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: var(--text-xs);
+    }
+
+    .link-underline {
+      position: relative;
+      transition: color var(--transition-normal);
+    }
+
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width var(--transition-normal);
+    }
+
+    .link-underline:hover::after {
+      width: 100%;
+    }
+
+    /* ========== Progress Bar ========== */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 1001;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      width: 0;
+      transition: width 0.2s ease;
+    }
+
+    /* ========== Animation Classes ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .slide-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     /* ========== Navbar ========== */
@@ -103,74 +245,62 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      background: var(--background-light);
+      box-shadow: var(--shadow-sm);
       z-index: 1000;
-      padding: 1rem 2rem;
+      padding: var(--space-sm) var(--space-md);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.3s ease;
-    }
-
-    .dark-mode #navbar {
-      background: rgba(44, 44, 44, 0.95);
-      box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+      transition: background var(--transition-normal);
     }
 
     .navbar-brand {
-      font-family: 'Italianno', cursive;
-      font-size: 1.8rem;
-      color: var(--dark-purple);
+      font-family: 'Caveat', cursive;
+      font-size: var(--text-3xl);
       font-weight: 700;
+      color: var(--primary-color);
     }
 
     #navbar ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
+      gap: var(--space-md);
       margin: 0;
     }
 
     #navbar ul li a {
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      transition: var(--transition);
-      border-radius: 8px;
-      font-size: 0.95rem;
+      font-weight: 600;
+      padding: var(--space-xs) var(--space-sm);
+      color: var(--text-dark);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
-      gap: 0.3rem;
-    }
-
-    #navbar ul li a i {
-      font-size: 0.9rem;
+      gap: var(--space-xs);
+      font-size: var(--text-sm);
+      transition: background var(--transition-normal), color var(--transition-normal);
     }
 
     #navbar ul li a:hover,
     #navbar ul li a.active {
-      color: var(--dark-purple);
-      background: var(--pastel-purple);
+      background: var(--secondary-color);
+      color: var(--background-light);
     }
 
     .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: var(--text-xl);
       cursor: pointer;
-      color: var(--dark-purple);
-      transition: var(--transition);
+      color: var(--primary-color);
     }
 
     .dark-mode-toggle {
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: var(--dark-purple);
-      transition: var(--transition);
-    }
-
-    .dark-mode .dark-mode-toggle {
-      color: var(--pastel-yellow);
+      position: fixed;
+      bottom: var(--space-md);
+      right: var(--space-md);
+      padding: 0.5rem;
+      font-size: var(--text-sm);
+      z-index: 1000;
     }
 
     /* ========== Mobile Navigation ========== */
@@ -178,801 +308,727 @@
       #navbar {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1rem;
+        padding: var(--space-sm);
       }
 
       #navbar ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.95);
-        transform: translateX(100%);
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        opacity: 0;
-      }
-
-      .dark-mode #navbar ul {
-        background: rgba(44, 44, 44, 0.95);
+        padding: var(--space-sm);
+        background: var(--background-light);
       }
 
       #navbar.active ul {
         display: flex;
-        transform: translateX(0);
-        opacity: 1;
       }
 
       .menu-toggle {
         display: block;
         position: absolute;
-        top: 1rem;
-        right: 1.5rem;
-      }
-
-      #navbar.bottom-nav {
-        top: auto;
-        bottom: 0;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0.5rem;
-        background: rgba(255, 255, 255, 0.95);
-      }
-
-      .dark-mode #navbar.bottom-nav {
-        background: rgba(44, 44, 44, 0.95);
-      }
-
-      #navbar.bottom-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        transform: none;
-        display: flex;
-        background: none;
-        opacity: 1;
-      }
-
-      #navbar.bottom-nav .navbar-brand,
-      #navbar.bottom-nav .menu-toggle,
-      #navbar.bottom-nav .dark-mode-toggle {
-        display: none;
-      }
-
-      #navbar.bottom-nav ul li a {
-        font-size: 0.85rem;
-        padding: 0.4rem;
+        top: var(--space-sm);
+        right: var(--space-sm);
       }
     }
 
     /* ========== Sections ========== */
     section {
-      padding: 4rem 1.5rem;
-      min-height: 50vh;
+      padding: var(--space-lg) var(--space-sm);
       scroll-margin-top: 80px;
+      position: relative;
+      min-height: 50vh;
+      transition: background var(--transition-normal);
     }
 
     section h2 {
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      color: var(--dark-purple);
+      margin-bottom: var(--space-md);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: var(--leading-tight);
       position: relative;
-      text-transform: uppercase;
-      font-weight: 600;
     }
 
     section h2::after {
       content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
+      display: block;
       width: 60px;
-      height: 4px;
-      background: linear-gradient(to right, var(--pastel-purple), var(--pastel-blue));
-      border-radius: 2px;
+      height: 3px;
+      background: var(--accent-color);
+      margin: var(--space-xs) auto 0;
     }
 
-    .dark-mode section {
-      background: var(--dark-bg);
+    /* Section Background Colors */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-light) 100%);
+      padding-top: 80px;
+    }
+
+    #about {
+      background: var(--pastel-blue);
+    }
+
+    #experience {
+      background: var(--background-light);
+    }
+
+    #projects {
+      background: var(--secondary-color);
+    }
+
+    #achievements {
+      background: var(--background-light);
+    }
+
+    #more-about-me {
+      background: var(--events-color);
+    }
+
+    #contact {
+      background: var(--background-light);
+      padding-bottom: var(--space-xl);
     }
 
     /* ========== Hero Section ========== */
-    #hero {
-      position: relative;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding-top: 80px; /* Offset for navbar */
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
     #hero img {
       width: 100%;
-      height: 100%;
+      max-width: 1200px;
+      height: auto;
       object-fit: cover;
-      object-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-normal);
+    }
+
+    #hero img:hover {
+      transform: scale(1.02);
     }
 
     @media (max-width: 768px) {
       #hero {
-        height: 70vh;
+        min-height: 70vh;
         padding-top: 60px;
       }
 
       #hero img {
-        object-fit: cover;
+        max-height: 80vh;
+        border-radius: var(--radius-md);
       }
     }
 
     /* ========== About Me ========== */
-    #about {
-      background: linear-gradient(135deg, var(--white), var(--light-gray));
-    }
-
-    .dark-mode #about {
-      background: linear-gradient(135deg, var(--dark-bg), var(--dark-card));
-    }
-
-    #about .section-container {
+    #about .container {
       display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 2rem;
+      grid-template-columns: 1fr 300px;
+      gap: var(--space-lg);
       align-items: center;
     }
 
     #about .about-content {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(8px);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: var(--background-light);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-normal);
     }
 
-    .dark-mode #about .about-content {
-      background: rgba(44, 44, 44, 0.8);
-      color: var(--dark-text);
+    #about .about-content:hover {
+      transform: translateY(-4px);
     }
 
     #about p {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
     }
 
     #about strong {
-      color: var(--dark-purple);
-      font-weight: 600;
+      color: var(--primary-color);
     }
 
     .luminary-tag {
       display: block;
-      margin-top: 1rem;
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.2rem;
-      color: var(--pastel-purple);
+      margin-top: var(--space-sm);
+      font-family: 'Caveat', cursive;
+      font-size: var(--text-xl);
+      color: var(--accent-color);
       text-align: center;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     #about img {
       width: 100%;
-      height: 350px;
+      height: 300px;
       object-fit: cover;
-      border-radius: var(--border-radius);
-      border: 4px solid var(--pastel-yellow);
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
-      loading: lazy;
+      border-radius: var(--radius-md);
+      border: 3px solid var(--accent-color);
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 1/1;
+      transition: transform var(--transition-normal);
     }
 
     #about img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     @media (max-width: 992px) {
-      #about .section-container {
+      #about .container {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
       #about img {
-        max-width: 300px;
-        height: 300px;
+        max-width: 260px;
+        height: 260px;
         margin: 0 auto;
       }
     }
 
     /* ========== Experience ========== */
-    #experience {
-      background: var(--light-gray);
-    }
-
-    .dark-mode #experience {
-      background: var(--dark-bg);
-    }
-
     .filter-container {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
       flex-wrap: wrap;
     }
 
     .filter-btn {
       padding: 0.5rem 1rem;
       background: var(--pastel-blue);
-      color: var(--white);
-      border-radius: 20px;
+      color: var(--background-light);
+      border-radius: var(--radius-sm);
       cursor: pointer;
-      transition: var(--transition);
-      font-size: 0.85rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: background var(--transition-normal), transform var(--transition-fast);
+      box-shadow: var(--shadow-sm);
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: var(--dark-purple);
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      background: var(--accent-color);
+      color: var(--text-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
 
     .experience-card {
-      background: var(--white);
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      padding: 1.2rem;
-      transition: var(--transition);
-      position: relative;
-      animation: fadeUp 0.3s ease forwards;
-      cursor: pointer;
-    }
-
-    .dark-mode .experience-card {
-      background: var(--dark-card);
-      color: var(--dark-text);
-    }
-
-    .experience-card.leadership {
-      border-left: 4px solid var(--leadership-color);
-    }
-
-    .experience-card.tech {
-      border-left: 4px solid var(--tech-color);
-    }
-
-    .experience-card.social-media {
-      border-left: 4px solid var(--social-media-color);
-    }
-
-    .experience-card.events {
-      border-left: 4px solid var(--events-color);
+      background: var(--background-light);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-md);
+      border-left: 4px solid var(--secondary-color);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     }
 
     .experience-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
-    .dark-mode .experience-card:hover {
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    .experience-card.leadership {
+      border-left-color: var(--leadership-color);
     }
 
-    .experience-card i {
-      color: var(--dark-purple);
-      margin-right: 0.5rem;
+    .experience-card.tech {
+      border-left-color: var(--tech-color);
+    }
+
+    .experience-card.social-media {
+      border-left-color: var(--social-media-color);
+    }
+
+    .experience-card.events {
+      border-left-color: var(--events-color);
     }
 
     .experience-card h3 {
-      color: var(--dark-purple);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-xs);
+      line-height: var(--leading-tight);
     }
 
     .card-date {
       display: inline-block;
-      background: var(--pastel-yellow);
-      padding: 0.3rem 0.7rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-
-    .experience-card .view-details {
-      margin-top: 0.5rem;
-    }
-
-    .experience-card.hidden {
-      display: none;
-    }
-
-    @keyframes fadeUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* ========== Popup Styling ========== */
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .popup-content {
-      background: var(--white);
-      max-width: 500px;
-      width: 90%;
-      max-height: 70vh;
-      overflow-y: auto;
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      position: relative;
-      animation: fadeIn 0.3s ease forwards;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .dark-mode .popup-content {
-      background: var(--dark-card);
-      color: var(--dark-text);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .popup-content h3 {
-      color: var(--dark-purple);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .popup-content p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .popup-close {
-      position: absolute;
-      top: 0.8rem;
-      right: 0.8rem;
-      background: var(--dark-purple);
-      color: var(--white);
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .popup-close:hover {
-      background: var(--pastel-purple);
-    }
-
-    .popup-details-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .dark-mode .popup-details-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .popup-details-item i {
-      color: var(--dark-purple);
-      font-size: 1.1rem;
-      margin-top: 0.2rem;
-    }
-
-    .popup-details-item strong {
-      color: var(--dark-purple);
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
+      margin-bottom: var(--space-sm);
       font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .popup-details-item p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    .popup-details-item .stars {
-      display: flex;
-      gap: 0.3rem;
-      margin-top: 0.4rem;
-    }
-
-    .popup-details-item .stars i {
-      color: var(--pastel-yellow);
-      font-size: 0.9rem;
-      transition: transform 0.2s ease;
-    }
-
-    .popup-details-item .stars i.empty {
-      color: #ccc;
-    }
-
-    .popup-details-item:hover .stars i {
-      transform: scale(1.1);
-    }
-
-    .popup-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .popup-tag {
-      background: var(--pastel-blue);
-      color: var(--white);
-      padding: 0.3rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.8rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
     }
 
     /* ========== Projects ========== */
-    #projects {
-      background: var(--white);
-    }
-
-    .dark-mode #projects {
-      background: var(--dark-bg);
-    }
-
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
     .project-card {
-      background: var(--light-gray);
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      padding: 1.5rem;
-      transition: var(--transition);
-      position: relative;
-      animation: fadeUp 0.3s ease forwards;
-      cursor: pointer;
-    }
-
-    .dark-mode .project-card {
-      background: var(--dark-card);
-      color: var(--dark-text);
+      background: var(--background-light);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-md);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
-    .dark-mode .project-card:hover {
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    .project-card h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-xs);
+      line-height: var(--leading-tight);
     }
 
-    .project-card .card-content {
+    .project-buttons {
       display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .project-card i {
-      color: var(--dark-purple);
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .project-tag {
-      background: var(--pastel-blue);
-      color: var(--white);
-      padding: 0.3rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.8rem;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
     }
 
     /* ========== Achievements ========== */
-    #achievements {
-      background: linear-gradient(135deg, var(--white), var(--light-gray));
-    }
-
-    .dark-mode #achievements {
-      background: linear-gradient(135deg, var(--dark-bg), var(--dark-card));
-    }
-
-    .achievements-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
     .achievement-card {
-      background: var(--white);
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      padding: 1.5rem;
-      transition: var(--transition);
-      position: relative;
-      animation: fadeUp 0.3s ease forwards;
-      cursor: pointer;
-    }
-
-    .dark-mode .achievement-card {
-      background: var(--dark-card);
-      color: var(--dark-text);
+      background: var(--background-light);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-md);
+      border-left: 4px solid var(--accent-color);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     }
 
     .achievement-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .dark-mode .achievement-card:hover {
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    }
-
-    .achievement-card i {
-      color: var(--dark-purple);
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
     .achievement-card h3 {
-      color: var(--dark-purple);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-xs);
+      line-height: var(--leading-tight);
     }
 
     .achievement-card .card-date {
-      display: inline-block;
-      background: var(--pastel-yellow);
-      padding: 0.3rem 0.7rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-
-    .achievement-card .view-details {
-      margin-top: 0.5rem;
+      background: var(--secondary-color);
+      color: var(--background-light);
     }
 
     /* ========== More About Me ========== */
-    #more-about-me {
-      background: linear-gradient(135deg, var(--light-gray), var(--white));
-    }
-
-    .dark-mode #more-about-me {
-      background: linear-gradient(135deg, var(--dark-bg), var(--dark-card));
-    }
-
-    .more-about-me-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
     .more-about-me-card {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
+      background: var(--background-light);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
       text-align: center;
-      transition: var(--transition);
-      position: relative;
-      animation: fadeUp 0.3s ease forwards;
       cursor: pointer;
-    }
-
-    .dark-mode .more-about-me-card {
-      background: var(--dark-card);
-      color: var(--dark-text);
+      transition: transform var(--transition-normal), background var(--transition-normal);
     }
 
     .more-about-me-card:hover {
-      transform: scale(1.05);
+      background: var(--accent-color);
+      color: var(--text-dark);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
     .more-about-me-card i {
-      color: var(--dark-purple);
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      transition: var(--transition);
-    }
-
-    .more-about-me-card:hover i {
-      color: var(--pastel-purple);
+      color: var(--pastel-blue);
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-sm);
     }
 
     /* ========== Contact ========== */
-    #contact {
-      background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-purple));
-      padding: 2.5rem 1.5rem;
-      color: var(--white);
-    }
-
-    #contact h2 {
-      color: var(--white);
-    }
-
-    #contact h2::after {
-      background: var(--white);
-    }
-
     .contact-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-      gap: 1rem;
-      max-width: 500px;
-      margin: 1rem auto;
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      gap: var(--space-sm);
+      max-width: 400px;
+      margin: var(--space-lg) auto;
     }
 
     .contact-item {
-      background: rgba(255, 255, 255, 0.2);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .contact-item:hover {
-      background: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-      transform: scale(1.1);
-    }
-
-    .contact-item i {
-      font-size: 1.5rem;
-    }
-
-    .contact-form {
-      max-width: 500px;
-      margin: 1.5rem auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.8rem;
-      border: none;
-      border-radius: var(--border-radius);
-      font-size: 0.95rem;
-      resize: none;
-    }
-
-    .contact-form .btn {
-      align-self: center;
-    }
-
-    .contact-cta {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    /* ========== Scroll Indicator ========== */
-    .scroll-indicator {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(to right, var(--pastel-purple), var(--pastel-blue));
-      z-index: 1001;
-      transition: width 0.2s ease;
-    }
-
-    /* ========== Back to Top Button ========== */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--dark-purple);
-      color: var(--white);
+      background: var(--secondary-color);
       width: 50px;
       height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      opacity: 0;
-      transition: var(--transition);
-      z-index: 1000;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      box-shadow: var(--shadow-sm);
     }
 
-    .back-to-top.visible {
+    .contact-item:hover {
+      background: var(--accent-color);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-item i {
+      font-size: var(--text-base);
+      color: var(--background-light);
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: var(--space-lg) auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: var(--space-sm);
+      border: 1px solid var(--secondary-color);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      resize: none;
+      transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+      background: var(--background-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 8px rgba(254, 240, 138, 0.3);
+    }
+
+    .contact-form .btn {
+      align-self: center;
+      padding: 0.75rem 2rem;
+    }
+
+    .contact-cta {
+      text-align: center;
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-lg);
+      color: var(--primary-color);
+      font-weight: 600;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* ========== Unified Popup Styling (Full-Screen, Independent of Sections) ========== */
+    .global-popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.75); /* Dark semi-transparent background */
+      backdrop-filter: blur(3px); /* Strong glass-like blur */
+      -webkit-backdrop-filter: blur(3px); /* Safari support */
+      z-index: 3000; /* Above everything */
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+      pointer-events: none;
+    }
+
+    .dark-mode .global-popup-overlay {
+      background: rgba(0, 0, 0, 0.85); /* Darker in dark mode */
+    }
+
+    .global-popup-overlay.active {
+      display: flex;
       opacity: 1;
-      transform: translateY(0);
+      pointer-events: auto;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .global-popup-content {
+      background: var(--background-light);
+      color: var(--text-dark);
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      border: 1px solid transparent;
+      background: linear-gradient(var(--background-light), var(--background-light)) padding-box,
+                  linear-gradient(135deg, var(--secondary-color), var(--accent-color)) border-box;
+      max-width: 95%;
+      width: 850px; /* Fixed width for larger screens */
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(30px) scale(0.95);
+      opacity: 0;
+      transition: transform var(--transition-normal), opacity var(--transition-normal), scale var(--transition-normal);
+      box-shadow: var(--shadow-md), var(--shadow-glow);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      pointer-events: auto;
+    }
+
+    .global-popup-overlay.active .global-popup-content {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      animation: slideUp 0.4s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .global-popup-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .global-popup-content::-webkit-scrollbar-track {
+      background: var(--secondary-color);
+      border-radius: var(--radius-sm);
+    }
+
+    .global-popup-content::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: var(--radius-sm);
+    }
+
+    .global-popup-content::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color);
+    }
+
+    .global-popup-close {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      cursor: pointer;
+      font-size: var(--text-base);
+      color: var(--background-light);
+      background: var(--btn-primary-bg);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-normal), color var(--transition-normal);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .global-popup-close:hover {
+      background: var(--btn-primary-hover);
+      color: var(--text-light);
+    }
+
+    .global-popup-content h3 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-md);
+      line-height: var(--leading-tight);
+      color: var(--primary-color);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .global-popup-content p {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-sm);
+    }
+
+    .global-popup-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-top: var(--space-sm);
+    }
+
+    .global-popup-tag {
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
+      font-weight: 500;
+    }
+
+    .global-popup-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+      padding: var(--space-sm);
+      border-radius: var(--radius-md);
+      transition: background var(--transition-normal);
+    }
+
+    .global-popup-item:hover {
+      background: var(--secondary-color);
+    }
+
+    .global-popup-item i {
+      color: var(--pastel-blue);
+      font-size: var(--text-xl);
+      margin-top: var(--space-xs);
+      transition: transform var(--transition-normal);
+    }
+
+    .global-popup-item:hover i {
+      transform: scale(1.2);
+    }
+
+    .global-popup-item-content strong {
+      font-size: var(--text-base);
+      color: var(--primary-color);
+      display: block;
+      margin-bottom: var(--space-xs);
+    }
+
+    .global-popup-item-content p {
+      font-size: var(--text-sm);
+      color: var(--text-dark);
+    }
+
+    .star-rating {
+      display: flex;
+      gap: var(--space-xs);
+      margin: var(--space-xs) 0;
+    }
+
+    .star-rating i {
+      font-size: var(--text-sm);
+      color: var(--secondary-color);
+    }
+
+    .star-rating .filled {
+      color: var(--accent-color);
+    }
+
+    /* ========== Scrollbar Styling ========== */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--secondary-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: var(--radius-sm);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color);
+    }
+
+    /* ========== Dark Mode Support ========== */
+    .dark-mode .experience-card,
+    .dark-mode .project-card,
+    .dark-mode .achievement-card,
+    .dark-mode .more-about-me-card,
+    .dark-mode #about .about-content,
+    .dark-mode .global-popup-content {
+      background: var(--background-dark);
+      color: var(--text-light);
+      border-color: #4b5563;
+    }
+
+    .dark-mode .global-popup-content {
+      background: linear-gradient(var(--background-dark), var(--background-dark)) padding-box,
+                  linear-gradient(135deg, var(--secondary-color), var(--accent-color)) border-box;
+    }
+
+    .dark-mode #navbar {
+      background: var(--background-dark);
+    }
+
+    .dark-mode #hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-dark) 100%);
+    }
+
+    .dark-mode .global-popup-item:hover {
+      background: #4b5563;
+    }
+
+    /* ========== Print Stylesheet ========== */
+    @media print {
+      nav, .contact-form, .progress-container, .dark-mode-toggle {
+        display: none;
+      }
+
+      body {
+        font-size: 11pt;
+        background: #fff;
+        color: #000;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      .experience-card,
+      .project-card,
+      .achievement-card,
+      .more-about-me-card,
+      #about .about-content {
+        background: #fff;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
     }
 
     /* ========== Responsive Design ========== */
     @media (max-width: 768px) {
+      :root {
+        --text-sm: 0.875rem;
+        --text-xl: 1.125rem;
+        --text-2xl: 1.25rem;
+        --text-3xl: 1.75rem;
+      }
+
       section {
-        padding: 3rem 1rem;
+        padding: var(--space-md) var(--space-sm);
       }
 
       section h2 {
-        font-size: 1.8rem;
+        font-size: var(--text-xl);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
       .contact-container {
-        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
       }
 
       .contact-item {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
       }
 
       .contact-item i {
-        font-size: 1.2rem;
+        font-size: var(--text-sm);
       }
 
-      .experience-grid,
-      .cards-container,
-      .achievements-container {
-        grid-template-columns: 1fr;
+      .global-popup-content {
+        max-height: 85vh;
+        padding: var(--space-md);
+        width: 95%; /* Full width on smaller screens */
+        max-width: 550px; /* Restrict max width for better readability */
       }
 
-      .popup-content {
-        max-height: 80vh;
-        padding: 1.2rem;
+      .project-buttons {
+        flex-direction: column;
+        gap: var(--space-xs);
       }
     }
 
@@ -981,47 +1037,66 @@
         grid-template-columns: 1fr;
       }
 
-      .popup-details-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      .navbar-brand {
+        font-size: var(--text-xl);
       }
 
-      .popup-details-item i {
-        margin-bottom: 0.5rem;
+      .btn {
+        font-size: var(--text-xs);
+        padding: 0.5rem 1rem;
+      }
+
+      .global-popup-content {
+        width: 90%;
+        max-width: 400px;
+        padding: var(--space-sm);
+      }
+
+      .global-popup-content h3 {
+        font-size: var(--text-xl);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Scroll Indicator -->
-  <div class="scroll-indicator"></div>
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
 
   <!-- Navigation Bar -->
   <nav id="navbar">
     <div class="navbar-brand">Malak Emad</div>
     <div class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></div>
     <ul>
-      <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-      <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-      <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
-      <li><a href="#more-about-me"><i class="fas fa-info-circle"></i> More About Me</a></li>
-      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="#hero" class="link-underline"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about" class="link-underline"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#experience" class="link-underline"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="#projects" class="link-underline"><i class="fas fa-project-diagram"></i> Projects</a></li>
+      <li><a href="#achievements" class="link-underline"><i class="fas fa-trophy"></i> Achievements</a></li>
+      <li><a href="#more-about-me" class="link-underline"><i class="fas fa-info-circle"></i> More About Me</a></li>
+      <li><a href="#contact" class="link-underline"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
-    <div class="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></div>
   </nav>
 
+  <!-- Unified Popup (Single Global Popup for All Sections) -->
+  <div class="global-popup-overlay" id="global-popup">
+    <div class="global-popup-content">
+      <div class="global-popup-close" aria-label="Close popup"><i class="fas fa-times"></i></div>
+      <h3 id="global-popup-title"></h3>
+      <div id="global-popup-details"></div>
+    </div>
+  </div>
+
   <!-- Hero Section -->
-  <section id="hero">
+  <section id="hero" class="fade-in">
     <img src="Auc, pic.png" alt="Malak Emad Hero Image" loading="lazy">
   </section>
 
   <!-- About Me -->
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About Me</h2>
-    <div class="section-container">
+    <div class="container">
       <div class="about-content">
         <p>
           STEM enthusiast, social media strategist, and community leader with experience in content creation,
@@ -1030,300 +1105,250 @@
           impactful initiatives.
         </p>
         <span class="luminary-tag">Luminary: Inspiring & Leading the Way</span>
-        <a href="Malak Emad's Resume.pdf" class="btn" aria-label="Download Malak Emad's CV"><i class="fas fa-download"></i> Download CV</a>
+        <a href="Malak Emad's Resume.pdf" class="btn btn-primary" aria-label="Download Malak Emad's CV">Download CV</a>
       </div>
       <img src="photo_2025-02-10_19-17-06.jpg" alt="Malak Emad in a professional setting" loading="lazy">
     </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience">
+  <section id="experience" class="fade-in">
     <h2>Experience</h2>
-    <div class="section-container">
+    <div class="container">
       <div class="filter-container">
-        <button class="filter-btn active" data-filter="all" aria-label="Show all experiences">All</button>
-        <button class="filter-btn" data-filter="leadership" aria-label="Show leadership experiences">Leadership</button>
-        <button class="filter-btn" data-filter="tech" aria-label="Show tech experiences">Tech</button>
-        <button class="filter-btn" data-filter="social-media" aria-label="Show social media experiences">Social Media</button>
-        <button class="filter-btn" data-filter="events" aria-label="Show events experiences">Events</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="leadership">Leadership</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
+        <button class="filter-btn" data-filter="social-media">Social Media</button>
+        <button class="filter-btn" data-filter="events">Events</button>
       </div>
-      <div class="experience-grid">
-        <div class="experience-card leadership" data-details="Founded a platform empowering students with scholarship resources and leadership skills.">
+      <div class="grid experience-grid">
+        <div class="experience-card leadership slide-in-left" data-date="Feb 2025 – Present" data-details="Founded a platform empowering students with scholarship resources and leadership skills." data-icon="fa-crown">
           <span class="card-date">Feb 2025 – Present</span>
-          <h3><i class="fas fa-star"></i> Founder — Dear Future Luminary</h3>
-          <button class="btn view-details" aria-label="View details for Dear Future Luminary"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Founder — Dear Future Luminary</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card social-media" data-details="Led social media strategy and designed posts to boost conference engagement.">
+        <div class="experience-card social-media slide-in-left" data-date="May 2023 – Sep 2023" data-details="Led social media strategy and designed posts to boost conference engagement." data-icon="fa-share-alt">
           <span class="card-date">May 2023 – Sep 2023</span>
-          <h3><i class="fas fa-bullhorn"></i> Head of Social Media — MAS MUN</h3>
-          <button class="btn view-details" aria-label="View details for MAS MUN"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Head of Social Media — MAS MUN</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership" data-details="Guided international dialogue circles fostering cross-cultural understanding.">
+        <div class="experience-card leadership slide-in-left" data-date="Apr 2024 – May 2024" data-details="Guided international dialogue circles fostering cross-cultural understanding." data-icon="fa-globe">
           <span class="card-date">Apr 2024 – May 2024</span>
-          <h3><i class="fas fa-globe"></i> Facilitator — Soliya Global Circles</h3>
-          <button class="btn view-details" aria-label="View details for Soliya Global Circles"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Facilitator — Soliya Global Circles</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card events" data-details="Coordinated talks on youth empowerment, managing logistics and promotions.">
+        <div class="experience-card events slide-in-left" data-date="May 2023 – Jul 2023" data-details="Coordinated talks on youth empowerment, managing logistics and promotions." data-icon="fa-calendar-alt">
           <span class="card-date">May 2023 – Jul 2023</span>
-          <h3><i class="fas fa-microphone"></i> Event Organizer — TEDxEtTagammo</h3>
-          <button class="btn view-details" aria-label="View details for TEDxEtTagammo"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Event Organizer — TEDxEtTagammo</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech" data-details="Completed Python fundamentals through Stanford’s global CS course.">
+        <div class="experience-card tech slide-in-left" data-date="Apr 2024" data-details="Completed Python fundamentals through Stanford’s global CS course." data-icon="fa-code">
           <span class="card-date">Apr 2024</span>
-          <h3><i class="fas fa-code"></i> Participant — Stanford Code in Place</h3>
-          <button class="btn view-details" aria-label="View details for Stanford Code in Place"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Participant — Stanford Code in Place</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech" data-details="Collaborated on earth science solutions during a hackathon.">
+        <div class="experience-card tech slide-in-left" data-date="Oct 2023" data-details="Collaborated on earth science solutions during a hackathon." data-icon="fa-rocket">
           <span class="card-date">Oct 2023</span>
-          <h3><i class="fas fa-rocket"></i> Attendee — NASA Space Apps Cairo</h3>
-          <button class="btn view-details" aria-label="View details for NASA Space Apps Cairo"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Attendee — NASA Space Apps Cairo</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Mentored by STEM leaders on science and leadership.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Jun 2023 – Aug 2023" data-details="Mentored by STEM leaders on science and leadership." data-icon="fa-chalkboard-teacher">
           <span class="card-date">Jun 2023 – Aug 2023</span>
-          <h3><i class="fas fa-female"></i> Participant — 1000 Girls, 1000 Futures</h3>
-          <button class="btn view-details" aria-label="View details for 1000 Girls, 1000 Futures"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Participant — 1000 Girls, 1000 Futures</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Led a team to first place in a business challenge.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Aug 2024 – Sep 2024" data-details="Led a team to first place in a business challenge." data-icon="fa-trophy">
           <span class="card-date">Aug 2024 – Sep 2024</span>
-          <h3><i class="fas fa-campground"></i> Facilitator — Entrepreneurship Summer Camp</h3>
-          <button class="btn view-details" aria-label="View details for Entrepreneurship Summer Camp"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Facilitator — Entrepreneurship Summer Camp</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card social-media hidden" data-details="Developed strategies to boost online visibility.">
+        <div class="experience-card social-media hidden slide-in-left" data-date="Feb 2024 – Present" data-details="Developed strategies to boost online visibility." data-icon="fa-share-alt">
           <span class="card-date">Feb 2024 – Present</span>
-          <h3><i class="fas fa-bullhorn"></i> Social Media Manager — Mr. Mahmoud ElKholy</h3>
-          <button class="btn view-details" aria-label="View details for Mr. Mahmoud ElKholy"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Social Media Manager — Mr. Mahmoud ElKholy</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech hidden" data-details="Built a book review website empowering African girls.">
+        <div class="experience-card tech hidden slide-in-left" data-date="Jun 2023 – Aug 2023" data-details="Built a book review website empowering African girls." data-icon="fa-laptop-code">
           <span class="card-date">Jun 2023 – Aug 2023</span>
-          <h3><i class="fas fa-laptop-code"></i> Front-End Developer — Star Girls Africa</h3>
-          <button class="btn view-details" aria-label="View details for Star Girls Africa"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Front-End Developer — Star Girls Africa</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech hidden" data-details="Developed front-end projects using HTML, CSS, and JavaScript.">
+        <div class="experience-card tech hidden slide-in-left" data-date="Jan 2023 – Jun 2024" data-details="Developed front-end projects using HTML, CSS, and JavaScript." data-icon="fa-code">
           <span class="card-date">Jan 2023 – Jun 2024</span>
-          <h3><i class="fas fa-laptop-code"></i> Programming Intern — Kode with Klossy</h3>
-          <button class="btn view-details" aria-label="View details for Kode with Klossy"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Programming Intern — Kode with Klossy</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card social-media hidden" data-details="Managed content, trained volunteers, and increased audience engagement on social platforms.">
+        <div class="experience-card social-media hidden slide-in-left" data-date="Jul 2023 – Sep 2023" data-details="Managed content, trained volunteers, and increased audience engagement on social platforms." data-icon="fa-users">
           <span class="card-date">Jul 2023 – Sep 2023</span>
-          <h3><i class="fas fa-bullhorn"></i> Social Media Head — Resala STEM</h3>
-          <button class="btn view-details" aria-label="View details for Resala STEM"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Social Media Head — Resala STEM</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Designed and conducted a workshop on teamwork and collaboration for student volunteers.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Jul 2023" data-details="Designed and conducted a workshop on teamwork and collaboration for student volunteers." data-icon="fa-chalkboard-teacher">
           <span class="card-date">Jul 2023</span>
-          <h3><i class="fas fa-users"></i> Training Leader — Resala STEM</h3>
-          <button class="btn view-details" aria-label="View details for Resala STEM Training"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Training Leader — Resala STEM</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card social-media hidden" data-details="Created visual content, managed posts, and attracted students for an online educational center.">
+        <div class="experience-card social-media hidden slide-in-left" data-date="Aug 2024 – Present" data-details="Created visual content, managed posts, and attracted students for an online educational center." data-icon="fa-palette">
           <span class="card-date">Aug 2024 – Present</span>
-          <h3><i class="fas fa-chalkboard-teacher"></i> Social Media Manager & Graphic Designer — AlMonqeth Academy</h3>
-          <button class="btn view-details" aria-label="View details for AlMonqeth Academy"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Social Media Manager & Graphic Designer — AlMonqeth Academy</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech hidden" data-details="Completed a programming track focused on problem-solving and logic building.">
+        <div class="experience-card tech hidden slide-in-left" data-date="Jul 2023 – Aug 2023" data-details="Completed a programming track focused on problem-solving and logic building." data-icon="fa-laptop-code">
           <span class="card-date">Jul 2023 – Aug 2023</span>
-          <h3><i class="fas fa-tools"></i> Intern — Microsoft Student Ambassadors Learn</h3>
-          <button class="btn view-details" aria-label="View details for Microsoft Student Ambassadors"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Intern — Microsoft Student Ambassadors Learn</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Joined an international debate on global issues with peers from diverse backgrounds.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Apr 2024" data-details="Joined an international debate on global issues with peers from diverse backgrounds." data-icon="fa-gavel">
           <span class="card-date">Apr 2024</span>
-          <h3><i class="fas fa-handshake"></i> Political Debater — Soliya Global Circles</h3>
-          <button class="btn view-details" aria-label="View details for Soliya Global Circles Debate"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Political Debater — Soliya Global Circles</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Selected for an intensive summer entrepreneurship program empowering youth across Africa.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Jul 2024" data-details="Selected for an intensive summer entrepreneurship program empowering youth across Africa." data-icon="fa-lightbulb">
           <span class="card-date">Jul 2024</span>
-          <h3><i class="fas fa-rocket"></i> Scholar — BUILD in a Box</h3>
-          <button class="btn view-details" aria-label="View details for BUILD in a Box"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Scholar — BUILD in a Box</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech hidden" data-details="Learned web development basics while collaborating on tech projects with international girls.">
+        <div class="experience-card tech hidden slide-in-left" data-date="Jul 2024" data-details="Learned web development basics while collaborating on tech projects with international girls." data-icon="fa-code">
           <span class="card-date">Jul 2024</span>
-          <h3><i class="fas fa-code"></i> Scholar — All Girls Code</h3>
-          <button class="btn view-details" aria-label="View details for All Girls Code"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Scholar — All Girls Code</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card tech hidden" data-details="Completed hands-on projects in front-end development and explored careers in tech.">
+        <div class="experience-card tech hidden slide-in-left" data-date="Aug 2023" data-details="Completed hands-on projects in front-end development and explored careers in tech." data-icon="fa-laptop-code">
           <span class="card-date">Aug 2023</span>
-          <h3><i class="fas fa-code"></i> Scholar — Girls Who Code (GWC)</h3>
-          <button class="btn view-details" aria-label="View details for Girls Who Code"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Scholar — Girls Who Code (GWC)</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Explored global citizenship and cross-cultural understanding through virtual exchange.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Jul 2023 – Aug 2023" data-details="Explored global citizenship and cross-cultural understanding through virtual exchange." data-icon="fa-globe">
           <span class="card-date">Jul 2023 – Aug 2023</span>
-          <h3><i class="fas fa-users"></i> Scholar — The Experiment Digital</h3>
-          <button class="btn view-details" aria-label="View details for The Experiment Digital"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Scholar — The Experiment Digital</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card events hidden" data-details="Engaged in climate policy dialogues and sustainability workshops with Egyptian youth.">
+        <div class="experience-card events hidden slide-in-left" data-date="Oct 2023" data-details="Engaged in climate policy dialogues and sustainability workshops with Egyptian youth." data-icon="fa-leaf">
           <span class="card-date">Oct 2023</span>
-          <h3><i class="fas fa-leaf"></i> Attendee — LCOY Egypt (Local Conference of Youth)</h3>
-          <button class="btn view-details" aria-label="View details for LCOY Egypt"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Attendee — LCOY Egypt</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Collaborated with international students on a global business consulting challenge.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Mar 2024 – Apr 2024" data-details="Collaborated with international students on a global business consulting challenge." data-icon="fa-briefcase">
           <span class="card-date">Mar 2024 – Apr 2024</span>
-          <h3><i class="fas fa-globe"></i> Participant — X-Culture</h3>
-          <button class="btn view-details" aria-label="View details for X-Culture"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Participant — X-Culture</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card leadership hidden" data-details="Conducted a scientific project tackling real-world global challenges with STEM mentors.">
+        <div class="experience-card leadership hidden slide-in-left" data-date="Sep 2023 – Dec 2023" data-details="Conducted a scientific project tackling real-world global challenges with STEM mentors." data-icon="fa-flask">
           <span class="card-date">Sep 2023 – Dec 2023</span>
-          <h3><i class="fas fa-flask"></i> Researcher — Junior Academy (NYAS)</h3>
-          <button class="btn view-details" aria-label="View details for Junior Academy"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Researcher — Junior Academy (NYAS)</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="experience-card events hidden" data-details="Participated in discussions on youth-led climate action and sustainability initiatives.">
+        <div class="experience-card events hidden slide-in-left" data-date="Jan 2024" data-details="Participated in discussions on youth-led climate action and sustainability initiatives." data-icon="fa-globe">
           <span class="card-date">Jan 2024</span>
-          <h3><i class="fas fa-users"></i> Attendee — International Youth Conference</h3>
-          <button class="btn view-details" aria-label="View details for International Youth Conference"><i class="fas fa-eye"></i> View Details</button>
+          <h3>Attendee — International Youth Conference</h3>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
       </div>
-      <button class="btn load-more" style="margin: 2rem auto; display: block;" aria-label="Load more experiences">Load More</button>
-    </div>
-    <div class="popup-overlay" id="experience-popup">
-      <div class="popup-content">
-        <div class="popup-close" aria-label="Close experience popup"><i class="fas fa-times"></i></div>
-        <h3 id="popup-title"></h3>
-        <p id="popup-details"></p>
-      </div>
+      <button class="btn btn-primary load-more" style="margin: var(--space-lg) auto; display: block;">Load More</button>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects">
+  <section id="projects" class="fade-in">
     <h2>Projects</h2>
-    <div class="section-container">
-      <div class="cards-container">
-        <div class="project-card" data-details="Designed a sensor-based irrigation system to optimize crop growth and conserve water. Earned AFS Certificate of Excellence." data-tags="IoT,Sustainability">
-          <div class="card-content">
-            <span class="card-date">2023</span>
-            <i class="fas fa-leaf"></i>
-            <h3>Optimizing Crop Growth</h3>
-            <div class="project-tags">
-              <span class="project-tag">IoT</span>
-              <span class="project-tag">Sustainability</span>
-            </div>
-            <button class="btn view-details" aria-label="View details for Optimizing Crop Growth"><i class="fas fa-eye"></i> View Details</button>
+    <div class="container">
+      <div class="grid cards-container">
+        <div class="project-card slide-in-left" data-date="2023" data-details="Designed a sensor-based irrigation system to optimize crop growth and conserve water. Earned AFS Certificate of Excellence." data-tags="IoT,Sustainability" data-icon="fa-leaf">
+          <span class="card-date">2023</span>
+          <h3>Optimizing Crop Growth</h3>
+          <div class="project-buttons">
+            <button class="btn btn-primary btn-small view-project">View Project</button>
+            <button class="btn btn-accent btn-small view-details">View Details</button>
           </div>
         </div>
-        <div class="project-card" data-details="Developed a book review website during Star Girls Africa using HTML, CSS, and JavaScript." data-tags="Web Development,Front-End">
-          <div class="card-content">
-            <span class="card-date">2022</span>
-            <i class="fas fa-code"></i>
-            <h3>Book Review Website</h3>
-            <div class="project-tags">
-              <span class="project-tag">Web Development</span>
-              <span class="project-tag">Front-End</span>
-            </div>
-            <button class="btn view-details" aria-label="View details for Book Review Website"><i class="fas fa-eye"></i> View Details</button>
+        <div class="project-card slide-in-left" data-date="2022" data-details="Developed a book review website during Star Girls Africa using HTML, CSS, and JavaScript." data-tags="Web Development,Front-End" data-icon="fa-laptop-code">
+          <span class="card-date">2022</span>
+          <h3>Book Review Website</h3>
+          <div class="project-buttons">
+            <button class="btn btn-primary btn-small view-project">View Project</button>
+            <button class="btn btn-accent btn-small view-details">View Details</button>
           </div>
         </div>
-        <div class="project-card" data-details="Researched climate change causes, impacts, and solutions for Star Girls Africa." data-tags="Research,Sustainability">
-          <div class="card-content">
-            <span class="card-date">2022</span>
-            <i class="fas fa-globe"></i>
-            <h3>Climate Change Research</h3>
-            <div class="project-tags">
-              <span class="project-tag">Research</span>
-              <span class="project-tag">Sustainability</span>
-            </div>
-            <button class="btn view-details" aria-label="View details for Climate Change Research"><i class="fas fa-eye"></i> View Details</button>
+        <div class="project-card slide-in-left" data-date="2022" data-details="Researched climate change causes, impacts, and solutions for Star Girls Africa." data-tags="Research,Sustainability" data-icon="fa-flask">
+          <span class="card-date">2022</span>
+          <h3>Climate Change Research</h3>
+          <div class="project-buttons">
+            <button class="btn btn-primary btn-small view-project">View Project</button>
+            <button class="btn btn-accent btn-small view-details">View Details</button>
           </div>
         </div>
-        <div class="project-card" data-details="Developed a personal portfolio website using HTML, CSS, and JavaScript for scholarship applications." data-tags="Web Development,Portfolio">
-          <div class="card-content">
-            <span class="card-date">May 2025</span>
-            <i class="fas fa-laptop-code"></i>
-            <h3>My Portfolio Website</h3>
-            <div class="project-tags">
-              <span class="project-tag">Web Development</span>
-              <span class="project-tag">Portfolio</span>
-            </div>
-            <button class="btn view-details" aria-label="View details for My Portfolio Website"><i class="fas fa-eye"></i> View Details</button>
+        <div class="project-card slide-in-left" data-date="May 2025" data-details="Developed a personal portfolio website using HTML, CSS, and JavaScript for scholarship applications." data-tags="Web Development,Portfolio" data-icon="fa-briefcase">
+          <span class="card-date">May 2025</span>
+          <h3>My Portfolio Website</h3>
+          <div class="project-buttons">
+            <button class="btn btn-primary btn-small view-project">View Project</button>
+            <button class="btn btn-accent btn-small view-details">View Details</button>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="popup-overlay" id="project-popup">
-      <div class="popup-content">
-        <div class="popup-close" aria-label="Close project popup"><i class="fas fa-times"></i></div>
-        <h3 id="popup-title"></h3>
-        <p id="popup-details"></p>
-        <div class="popup-tags" id="popup-tags"></div>
       </div>
     </div>
   </section>
 
   <!-- Achievements -->
-  <section id="achievements">
+  <section id="achievements" class="fade-in">
     <h2>Achievements</h2>
-    <div class="section-container">
-      <div class="achievements-container">
-        <div class="achievement-card" data-details="Awarded twice in 2023 and 2024 for scientific excellence and teamwork, leading innovative projects.">
+    <div class="container">
+      <div class="grid achievements-container">
+        <div class="achievement-card slide-in-left" data-date="2023-2024" data-details="Awarded twice in 2023 and 2024 for scientific excellence and teamwork, leading innovative projects." data-icon="fa-trophy">
           <span class="card-date">2023-2024</span>
-          <i class="fas fa-trophy"></i>
           <h3>Best Scientific Team Award — Egyptian Students' Union</h3>
-          <button class="btn view-details" aria-label="View details for Best Scientific Team Award"><i class="fas fa-eye"></i> View Details</button>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="achievement-card" data-details="Qualified for pre-finals with a Biology paper and Electromagnetism video, showcasing creativity.">
+        <div class="achievement-card slide-in-left" data-date="2023" data-details="Qualified for pre-finals with a Biology paper and Electromagnetism video, showcasing creativity." data-icon="fa-medal">
           <span class="card-date">2023</span>
-          <i class="fas fa-medal"></i>
           <h3>Pre-Final Competitor — Behind The Universe LLC</h3>
-          <button class="btn view-details" aria-label="View details for Behind The Universe LLC"><i class="fas fa-eye"></i> View Details</button>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="achievement-card" data-details="Completed the qualification round, earning recognition for mathematical proficiency.">
+        <div class="achievement-card slide-in-left" data-date="2023-2024" data-details="Completed the qualification round, earning recognition for mathematical proficiency." data-icon="fa-calculator">
           <span class="card-date">2023-2024</span>
-          <i class="fas fa-calculator"></i>
           <h3>Mathematics Competitor — IYMC</h3>
-          <button class="btn view-details" aria-label="View details for IYMC"><i class="fas fa-eye"></i> View Details</button>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="achievement-card" data-details="Won a gold medal by addressing climate challenges with innovative solutions.">
+        <div class="achievement-card slide-in-left" data-date="2024" data-details="Won a gold medal by addressing climate challenges with innovative solutions." data-icon="fa-medal">
           <span class="card-date">2024</span>
-          <i class="fas fa-medal"></i>
           <h3>Gold Medal Winner — Climate Science Olympiad</h3>
-          <button class="btn view-details" aria-label="View details for Climate Science Olympiad"><i class="fas fa-eye"></i> View Details</button>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="achievement-card" data-details="Led team to first place in a business challenge, showcasing leadership and teamwork.">
+        <div class="achievement-card slide-in-left" data-date="2024" data-details="Led team to first place in a business challenge, showcasing leadership and teamwork." data-icon="fa-trophy">
           <span class="card-date">2024</span>
-          <i class="fas fa-trophy"></i>
           <h3>First Place Winner — Entrepreneurship Summer Camp</h3>
-          <button class="btn view-details" aria-label="View details for Entrepreneurship Summer Camp"><i class="fas fa-eye"></i> View Details</button>
+          <button class="btn btn-accent view-details">View Details</button>
         </div>
-      </div>
-    </div>
-    <div class="popup-overlay" id="achievement-popup">
-      <div class="popup-content">
-        <div class="popup-close" aria-label="Close achievement popup"><i class="fas fa-times"></i></div>
-        <h3 id="popup-title"></h3>
-        <p id="popup-details"></p>
       </div>
     </div>
   </section>
 
   <!-- More About Me -->
-  <section id="more-about-me">
+  <section id="more-about-me" class="fade-in">
     <h2>More About Me</h2>
-    <div class="section-container">
-      <div class="more-about-me-container">
-        <div class="more-about-me-card" data-category="skills">
+    <div class="container">
+      <div class="grid more-about-me-container">
+        <div class="more-about-me-card slide-in-left" data-category="skills">
           <i class="fas fa-lightbulb"></i>
           Skills
         </div>
-        <div class="more-about-me-card" data-category="hobbies">
+        <div class="more-about-me-card slide-in-left" data-category="hobbies">
           <i class="fas fa-heart"></i>
           Hobbies
         </div>
-        <div class="more-about-me-card" data-category="languages">
+        <div class="more-about-me-card slide-in-left" data-category="languages">
           <i class="fas fa-language"></i>
           Languages
         </div>
       </div>
     </div>
-    <div class="popup-overlay" id="more-about-me-popup">
-      <div class="popup-content">
-        <div class="popup-close" aria-label="Close more about me popup"><i class="fas fa-times"></i></div>
-        <h3 id="popup-title"></h3>
-        <div id="popup-details" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem;"></div>
-      </div>
-    </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <h2>Contact Me</h2>
-    <div class="section-container">
-      <p class="contact-cta">Let’s connect!</p>
+    <div class="container">
+      <p class="contact-cta">Let’s connect and create-something amazing!</p>
       <div class="contact-container">
         <a href="mailto:malakemad7777777@gmail.com" class="contact-item" aria-label="Email Malak Emad"><i class="fas fa-envelope"></i></a>
         <a href="https://wa.me/201090879843" target="_blank" class="contact-item" aria-label="WhatsApp Malak Emad"><i class="fab fa-whatsapp"></i></a>
@@ -1335,379 +1360,381 @@
       <form class="contact-form" action="https://formspree.io/f/xkgrgppk" method="POST">
         <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
         <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
-        <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your message"></textarea>
-        <button type="submit" class="btn" aria-label="Send message"><i class="fas fa-paper-plane"></i> Send Message</button>
+        <textarea name="message" rows="4" placeholder="Your Message" required aria-label="Your message"></textarea>
+        <button type="submit" class="btn btn-primary" aria-label="Send message">Send Message</button>
       </form>
     </div>
   </section>
 
-  <!-- Back to Top Button -->
-  <a href="#hero" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
-
   <script>
-    // ========== Utility Functions ==========
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    }
+    // ========== Navbar ==========
+    const initNavbar = () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navbar = document.querySelector('#navbar');
 
-    // Typewriter Effect
-    let typeWriterTimeout;
-    function typeWriter(element, text, speed = 50) {
-      clearTimeout(typeWriterTimeout);
-      element.innerHTML = '';
-      let i = 0;
-      function type() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          typeWriterTimeout = setTimeout(type, speed);
-        }
+      if (menuToggle && navbar) {
+        menuToggle.addEventListener('click', () => {
+          navbar.classList.toggle('active');
+          menuToggle.querySelector('i').classList.toggle('fa-bars');
+          menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
       }
-      type();
-    }
-
-    // ========== Menu Toggle ==========
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('#navbar');
-
-    menuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-      menuToggle.querySelector('i').classList.toggle('fa-bars');
-      menuToggle.querySelector('i').classList.toggle('fa-times');
-    });
-
-    // ========== Dark Mode Toggle ==========
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      darkModeToggle.querySelector('i').classList.toggle('fa-moon');
-      darkModeToggle.querySelector('i').classList.toggle('fa-sun');
-    });
-
-    // ========== Scroll Indicator ==========
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const debouncedScroll = debounce(() => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercentage = (window.scrollY / totalHeight) * 100;
-      scrollIndicator.style.width = scrollPercentage + '%';
-    }, 10);
-
-    window.addEventListener('scroll', debouncedScroll);
-
-    // ========== Active Section Highlight ==========
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('#navbar ul li a');
-    const debouncedSectionHighlight = debounce(() => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 80) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    }, 10);
-
-    window.addEventListener('scroll', debouncedSectionHighlight);
-
-    // ========== Intersection Observer for Animations ==========
-    const observerOptions = {
-      threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-        }
-      });
-    }, observerOptions);
+    // ========== Scroll Highlight ==========
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('#navbar ul li a');
 
-    document.querySelectorAll('.experience-card, .project-card, .achievement-card, .more-about-me-card').forEach(card => {
-      observer.observe(card);
-    });
-
-    // ========== Experience Filter and Popup ==========
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const experienceCards = document.querySelectorAll('.experience-card');
-    const experiencePopup = document.querySelector('#experience-popup');
-    const popupTitle = document.querySelector('#experience-popup #popup-title');
-    const popupDetails = document.querySelector('#experience-popup #popup-details');
-    const popupClose = document.querySelector('#experience-popup .popup-close');
-    const loadMoreBtn = document.querySelector('.load-more');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        experienceCards.forEach((card, index) => {
-          if (filter === 'all' || card.classList.contains(filter)) {
-            if (index < 6) {
-              card.style.display = 'block';
-              card.classList.remove('hidden');
-              card.style.animation = 'none';
-              setTimeout(() => {
-                card.style.animation = 'fadeUp 0.3s ease forwards';
-              }, 10);
-            } else {
-              card.classList.add('hidden');
-              card.style.display = 'none';
-            }
-          } else {
-            card.style.display = 'none';
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 80) {
+            current = section.getAttribute('id');
           }
         });
-        loadMoreBtn.style.display = document.querySelectorAll('.experience-card.hidden').length > 0 ? 'block' : 'none';
-      });
-    });
 
-    experienceCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const title = card.querySelector('h3').textContent;
-        const details = card.getAttribute('data-details');
-        popupTitle.textContent = title;
-        typeWriter(popupDetails, details);
-        experiencePopup.style.display = 'flex';
-      });
-      const viewDetailsBtn = card.querySelector('.view-details');
-      if (viewDetailsBtn) {
-        viewDetailsBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const title = card.querySelector('h3').textContent;
-          const details = card.getAttribute('data-details');
-          popupTitle.textContent = title;
-          typeWriter(popupDetails, details);
-          experiencePopup.style.display = 'flex';
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
         });
-      }
-    });
+      });
+    };
 
-    popupClose.addEventListener('click', () => {
-      experiencePopup.style.display = 'none';
-    });
+    // ========== Animation Observer ==========
+    const initAnimations = () => {
+      const elements = document.querySelectorAll('.fade-in, .slide-in-left');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-    experiencePopup.addEventListener('click', (e) => {
-      if (e.target === experiencePopup) {
-        experiencePopup.style.display = 'none';
-      }
-    });
+      elements.forEach(element => observer.observe(element));
+    };
 
-    loadMoreBtn.addEventListener('click', () => {
-      experienceCards.forEach(card => {
-        if (card.classList.contains('hidden')) {
-          card.classList.remove('hidden');
-          card.style.display = 'block';
-          card.style.animation = 'none';
-          setTimeout(() => {
-            card.style.animation = 'fadeUp 0.3s ease forwards';
-          }, 10);
+    // ========== Unified Popup Handler ==========
+    const initGlobalPopup = () => {
+      const globalPopup = document.querySelector('#global-popup');
+      const globalPopupTitle = globalPopup?.querySelector('#global-popup-title');
+      const globalPopupDetails = globalPopup?.querySelector('#global-popup-details');
+      const closeBtn = globalPopup?.querySelector('.global-popup-close');
+
+      if (!globalPopup || !globalPopupTitle || !globalPopupDetails || !closeBtn) return;
+
+      // Close popup on button click or overlay click
+      closeBtn.addEventListener('click', () => {
+        globalPopup.classList.remove('active');
+      });
+
+      globalPopup.addEventListener('click', (e) => {
+        if (e.target === globalPopup) {
+          globalPopup.classList.remove('active');
         }
       });
-      loadMoreBtn.style.display = 'none';
-    });
 
-    // ========== Project Popup ==========
-    const projectCards = document.querySelectorAll('.project-card');
-    const projectPopup = document.querySelector('#project-popup');
-    const projectPopupTitle = document.querySelector('#project-popup #popup-title');
-    const projectPopupDetails = document.querySelector('#project-popup #popup-details');
-    const projectPopupTags = document.querySelector('#project-popup #popup-tags');
-    const projectPopupClose = document.querySelector('#project-popup .popup-close');
+      // Experience Popup
+      const initExperiencePopup = () => {
+        const experienceCards = document.querySelectorAll('.experience-card');
 
-    projectCards.forEach(card => {
-      card.querySelector('.view-details').addEventListener('click', () => {
-        const title = card.querySelector('h3').textContent;
-        const details = card.getAttribute('data-details');
-        const tags = card.getAttribute('data-tags').split(',');
-        projectPopupTitle.textContent = title;
-        typeWriter(projectPopupDetails, details);
-        projectPopupTags.innerHTML = tags.map(tag => `<span class="popup-tag">${tag}</span>`).join('');
-        projectPopup.style.display = 'flex';
-      });
-    });
-
-    projectPopupClose.addEventListener('click', () => {
-      projectPopup.style.display = 'none';
-    });
-
-    projectPopup.addEventListener('click', (e) => {
-      if (e.target === projectPopup) {
-        projectPopup.style.display = 'none';
-      }
-    });
-
-    // ========== Achievement Popup ==========
-    const achievementCards = document.querySelectorAll('.achievement-card');
-    const achievementPopup = document.querySelector('#achievement-popup');
-    const achievementPopupTitle = document.querySelector('#achievement-popup #popup-title');
-    const achievementPopupDetails = document.querySelector('#achievement-popup #popup-details');
-    const achievementPopupClose = document.querySelector('#achievement-popup .popup-close');
-
-    achievementCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const title = card.querySelector('h3').textContent;
-        const details = card.getAttribute('data-details');
-        achievementPopupTitle.textContent = title;
-        typeWriter(achievementPopupDetails, details);
-        achievementPopup.style.display = 'flex';
-      });
-      const viewDetailsBtn = card.querySelector('.view-details');
-      if (viewDetailsBtn) {
-        viewDetailsBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const title = card.querySelector('h3').textContent;
-          const details = card.getAttribute('data-details');
-          achievementPopupTitle.textContent = title;
-          typeWriter(achievementPopupDetails, details);
-          achievementPopup.style.display = 'flex';
+        experienceCards.forEach(card => {
+          const viewDetailsBtn = card.querySelector('.view-details');
+          if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', () => {
+              const title = card.querySelector('h3')?.textContent || 'No Title';
+              const date = card.getAttribute('data-date') || '';
+              const details = card.getAttribute('data-details') || 'No details available.';
+              const icon = card.getAttribute('data-icon') || 'fa-briefcase';
+              globalPopupTitle.textContent = title;
+              globalPopupDetails.innerHTML = `
+                <div class="global-popup-item">
+                  <i class="fas ${icon}"></i>
+                  <div class="global-popup-item-content">
+                    <strong>${date}</strong>
+                    <p>${details}</p>
+                  </div>
+                </div>
+              `;
+              globalPopup.classList.add('active');
+            });
+          }
         });
-      }
-    });
+      };
 
-    achievementPopupClose.addEventListener('click', () => {
-      achievementPopup.style.display = 'none';
-    });
+      // Project Popup
+      const initProjectPopup = () => {
+        const projectCards = document.querySelectorAll('.project-card');
 
-    achievementPopup.addEventListener('click', (e) => {
-      if (e.target === achievementPopup) {
-        achievementPopup.style.display = 'none';
-      }
-    });
+        projectCards.forEach(card => {
+          const viewDetailsBtn = card.querySelector('.view-details');
+          const viewProjectBtn = card.querySelector('.view-project');
 
-    // ========== More About Me Popup ==========
-    const moreAboutMeCards = document.querySelectorAll('.more-about-me-card');
-    const moreAboutMePopup = document.querySelector('#more-about-me-popup');
-    const moreAboutMePopupTitle = document.querySelector('#more-about-me-popup #popup-title');
-    const moreAboutMePopupDetails = document.querySelector('#more-about-me-popup #popup-details');
-    const moreAboutMePopupClose = document.querySelector('#more-about-me-popup .popup-close');
+          if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', () => {
+              const title = card.querySelector('h3')?.textContent || 'No Title';
+              const date = card.getAttribute('data-date') || '';
+              const details = card.getAttribute('data-details') || 'No details available.';
+              const tags = card.getAttribute('data-tags')?.split(',') || [];
+              const icon = card.getAttribute('data-icon') || 'fa-project-diagram';
+              globalPopupTitle.textContent = title;
+              globalPopupDetails.innerHTML = `
+                <div class="global-popup-item">
+                  <i class="fas ${icon}"></i>
+                  <div class="global-popup-item-content">
+                    <strong>${date}</strong>
+                    <p>${details}</p>
+                    <div class="global-popup-tags">
+                      ${tags.map(tag => `<span class="global-popup-tag">${tag}</span>`).join('')}
+                    </div>
+                  </div>
+                </div>
+              `;
+              globalPopup.classList.add('active');
+            });
+          }
 
-    const skills = [
-      { name: 'Leadership', icon: 'fa-users', details: 'I developed my leadership skills through founding \'Dear Future Luminary\' in 2025, where I guide students toward scholarships and growth opportunities. It taught me how to inspire and manage a team effectively.' },
-      { name: 'Teamwork', icon: 'fa-people-arrows', details: 'I honed my teamwork skills during the NASA Space Apps Cairo Bootcamp in 2023. Working with a diverse group to solve real-world challenges taught me the value of collaboration and mutual support.' },
-      { name: 'Adaptability', icon: 'fa-random', details: 'Being part of Soliya Global Circles in 2024 helped me become more adaptable. Facilitating discussions with people from different cultures taught me how to adjust quickly and embrace new perspectives.' },
-      { name: 'Problem-Solving', icon: 'fa-lightbulb', details: 'I sharpened my problem-solving skills during the Climate Science Olympiad 2024, where I won a gold medal by tackling global climate challenges with innovative solutions under pressure.' },
-      { name: 'Time Management', icon: 'fa-clock', details: 'Managing multiple roles, like being a Social Media Manager and a Mathematics Tutor in 2024, taught me how to balance my time effectively while keeping up with my studies as a high school student.' },
-      { name: 'Project Management', icon: 'fa-tasks', details: 'Organizing events for TEDxEtTagammo in 2023 gave me hands-on experience in project management. Coordinating logistics and promotions for youth empowerment talks was challenging but rewarding!' },
-      { name: 'Coaching & Mentoring', icon: 'fa-chalkboard-teacher', details: 'I discovered my love for coaching while facilitating the Entrepreneurship Summer Camp in 2024. Leading my team to win first place by guiding and mentoring them was an unforgettable experience.' },
-      { name: 'Effective Communication', icon: 'fa-comments', details: 'My role as Head of Social Media for MAS MUN in 2023 improved my communication skills. Designing posts and engaging with the audience taught me how to convey ideas clearly and creatively.' }
-    ];
+          if (viewProjectBtn) {
+            viewProjectBtn.addEventListener('click', () => {
+              const title = card.querySelector('h3')?.textContent || 'Project';
+              alert(`Redirecting to ${title} project page (placeholder)`);
+            });
+          }
+        });
+      };
 
-    const hobbies = [
-      { name: 'Tutoring & Mentoring', icon: 'fa-chalkboard-teacher', details: 'Tutoring brings me joy because I love seeing others grow. Helping a struggling student understand a math concept in 2024 and seeing their smile was one of my happiest moments.' },
-      { name: 'Astronomy & Stargazing', icon: 'fa-star', details: 'Stargazing feels magical to me! Last summer, I spent a night watching a meteor shower with friends, and we stayed up till dawn—it’s a memory I’ll always cherish.' },
-      { name: 'Yoga & Mindfulness', icon: 'fa-spa', details: 'Yoga helps me find peace. In 2024, I started practicing daily, and during a stressful week, a 20-minute session completely calmed me down—it’s now my go-to relaxation method.' },
-      { name: 'Fashion Styling', icon: 'fa-tshirt', details: 'I adore fashion styling because it lets me express myself! I once styled an outfit for a school event in 2023, and everyone loved it—it made me feel so confident!' },
-      { name: 'Hip-Hop & Latin Dancing', icon: 'fa-heart', details: 'Dancing makes me feel alive! I joined a hip-hop dance class in 2023, and performing on stage for the first time gave me such a rush—I can’t wait to dance more!' }
-    ];
+      // Achievement Popup
+      const initAchievementPopup = () => {
+        const achievementCards = document.querySelectorAll('.achievement-card');
 
-    const languages = [
-      { name: 'Arabic', stars: 5, level: 'Native', details: 'Fluent in both written and spoken Arabic, used in professional and academic contexts.' },
-      { name: 'English', stars: 4, level: 'Fluent', details: 'Proficient in professional and academic English, with strong writing and speaking skills.' },
-      { name: 'German', stars: 1, level: 'Beginner', details: 'Basic understanding of German, currently learning vocabulary and grammar.' },
-      { name: 'Spanish', stars: 1, level: 'Beginner', details: 'Introductory knowledge of Spanish, focusing on basic phrases and communication.' }
-    ];
+        achievementCards.forEach(card => {
+          const viewDetailsBtn = card.querySelector('.view-details');
+          if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', () => {
+              const title = card.querySelector('h3')?.textContent || 'No Title';
+              const date = card.getAttribute('data-date') || '';
+              const details = card.getAttribute('data-details') || 'No details available.';
+              const icon = card.getAttribute('data-icon') || 'fa-trophy';
+              globalPopupTitle.textContent = title;
+              globalPopupDetails.innerHTML = `
+                <div class="global-popup-item">
+                  <i class="fas ${icon}"></i>
+                  <div class="global-popup-item-content">
+                    <strong>${date}</strong>
+                    <p>${details}</p>
+                  </div>
+                </div>
+              `;
+              globalPopup.classList.add('active');
+            });
+          }
+        });
+      };
 
-    moreAboutMeCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const category = card.getAttribute('data-category');
-        moreAboutMePopupTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-        moreAboutMePopupDetails.innerHTML = '';
+      // More About Me Popup
+      const initMoreAboutMePopup = () => {
+        const moreAboutMeCards = document.querySelectorAll('.more-about-me-card');
 
-        if (category === 'skills') {
-          skills.forEach(skill => {
-            const skillDiv = document.createElement('div');
-            skillDiv.classList.add('popup-details-item');
-            skillDiv.innerHTML = `<i class="fas ${skill.icon}"></i> <div><strong>${skill.name}</strong><p>${skill.details}</p></div>`;
-            moreAboutMePopupDetails.appendChild(skillDiv);
-          });
-        } else if (category === 'hobbies') {
-          hobbies.forEach(hobby => {
-            const hobbyDiv = document.createElement('div');
-            hobbyDiv.classList.add('popup-details-item');
-            hobbyDiv.innerHTML = `<i class="fas ${hobby.icon}"></i> <div><strong>${hobby.name}</strong><p>${hobby.details}</p></div>`;
-            moreAboutMePopupDetails.appendChild(hobbyDiv);
-          });
-        } else if (category === 'languages') {
-          languages.forEach(lang => {
-            const langDiv = document.createElement('div');
-            langDiv.classList.add('popup-details-item');
-            let starsHTML = '';
-            for (let i = 1; i <= 5; i++) {
-              starsHTML += `<i class="fas fa-star ${i <= lang.stars ? '' : 'empty'}"></i>`;
+        const skills = [
+          { name: 'Leadership', details: 'I developed my leadership skills through founding \'Dear Future Luminary\' in 2025, where I guide students toward scholarships and growth opportunities.', icon: 'fa-crown' },
+          { name: 'Teamwork', details: 'I honed my teamwork skills during the NASA Space Apps Cairo Bootcamp in 2023. Working with a diverse group to solve real-world challenges.', icon: 'fa-users' },
+          { name: 'Adaptability', details: 'Being part of Soliya Global Circles in 2024 helped me become more adaptable. Facilitating discussions with people from different cultures.', icon: 'fa-sync-alt' },
+          { name: 'Problem-Solving', details: 'I sharpened my problem-solving skills during the Climate Science Olympiad 2024, where I won a gold medal.', icon: 'fa-puzzle-piece' },
+          { name: 'Time Management', details: 'Managing multiple roles, like being a Social Media Manager and a Mathematics Tutor in 2024, taught me how to balance my time.', icon: 'fa-clock' },
+          { name: 'Project Management', details: 'Organizing events for TEDxEtTagammo in 2023 gave me hands-on experience in project management.', icon: 'fa-tasks' },
+          { name: 'Coaching & Mentoring', details: 'I discovered my love for coaching while facilitating the Entrepreneurship Summer Camp in 2024.', icon: 'fa-chalkboard-teacher' },
+          { name: 'Effective Communication', details: 'My role as Head of Social Media for MAS MUN in 2023 improved my communication skills.', icon: 'fa-comments' }
+        ];
+
+        const hobbies = [
+          { name: 'Tutoring & Mentoring', details: 'Tutoring brings me joy because I love seeing others grow.', icon: 'fa-chalkboard-teacher' },
+          { name: 'Astronomy & Stargazing', details: 'Stargazing feels magical to me! Last summer, I spent a night watching a meteor shower.', icon: 'fa-star' },
+          { name: 'Yoga & Mindfulness', details: 'Yoga helps me find peace. In 2024, I started practicing daily.', icon: 'fa-spa' },
+          { name: 'Fashion Styling', details: 'I adore fashion styling because it lets me express myself!', icon: 'fa-tshirt' },
+          { name: 'Hip-Hop & Latin Dancing', details: 'Dancing makes me feel alive! I joined a hip-hop dance class in 2023.', icon: 'fa-music' }
+        ];
+
+        const languages = [
+          { name: 'Arabic', level: 'Native', details: 'Fluent in both written and spoken Arabic.', stars: 5, icon: 'fa-globe' },
+          { name: 'English', level: 'Fluent', details: 'Proficient in professional and academic English.', stars: 4, icon: 'fa-globe' },
+          { name: 'German', level: 'Beginner', details: 'Basic understanding of German.', stars: 2, icon: 'fa-globe' },
+          { name: 'Spanish', level: 'Beginner', details: 'Introductory knowledge of Spanish.', stars: 2, icon: 'fa-globe' }
+        ];
+
+        moreAboutMeCards.forEach(card => {
+          card.addEventListener('click', () => {
+            const category = card.getAttribute('data-category');
+            globalPopupTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            globalPopupDetails.innerHTML = '';
+
+            if (category === 'skills') {
+              skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'global-popup-item';
+                skillDiv.innerHTML = `
+                  <i class="fas ${skill.icon}"></i>
+                  <div class="global-popup-item-content">
+                    <strong>${skill.name}</strong>
+                    <p>${skill.details}</p>
+                  </div>
+                `;
+                globalPopupDetails.appendChild(skillDiv);
+              });
+            } else if (category === 'hobbies') {
+              hobbies.forEach(hobby => {
+                const hobbyDiv = document.createElement('div');
+                hobbyDiv.className = 'global-popup-item';
+                hobbyDiv.innerHTML = `
+                  <i class="fas ${hobby.icon}"></i>
+                  <div class="global-popup-item-content">
+                    <strong>${hobby.name}</strong>
+                    <p>${hobby.details}</p>
+                  </div>
+                `;
+                globalPopupDetails.appendChild(hobbyDiv);
+              });
+            } else if (category === 'languages') {
+              languages.forEach(lang => {
+                const langDiv = document.createElement('div');
+                langDiv.className = 'global-popup-item';
+                const stars = Array(5).fill().map((_, i) => `
+                  <i class="fas fa-star ${i < lang.stars ? 'filled' : ''}"></i>
+                `).join('');
+                langDiv.innerHTML = `
+                  <i class="fas ${lang.icon}"></i>
+                  <div class="global-popup-item-content">
+                    <strong>${lang.name}</strong>
+                    <div class="star-rating">${stars}</div>
+                    <p>${lang.level}: ${lang.details}</p>
+                  </div>
+                `;
+                globalPopupDetails.appendChild(langDiv);
+              });
             }
-            langDiv.innerHTML = `<i class="fas fa-language"></i> <div><strong>${lang.name}</strong><p>${lang.level}: ${lang.details}</p><div class="stars">${starsHTML}</div></div>`;
-            moreAboutMePopupDetails.appendChild(langDiv);
+
+            globalPopup.classList.add('active');
           });
-        }
-
-        moreAboutMePopup.style.display = 'flex';
-      });
-    });
-
-    moreAboutMePopupClose.addEventListener('click', () => {
-      moreAboutMePopup.style.display = 'none';
-    });
-
-    moreAboutMePopup.addEventListener('click', (e) => {
-      if (e.target === moreAboutMePopup) {
-        moreAboutMePopup.style.display = 'none';
-      }
-    });
-
-    // ========== Back to Top Button ==========
-    const backToTop = document.querySelector('.back-to-top');
-    const debouncedBackToTop = debounce(() => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    }, 10);
-
-    window.addEventListener('scroll', debouncedBackToTop);
-
-    // ========== Form Submission Spinner ==========
-    const contactForm = document.querySelector('.contact-form');
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector('.btn');
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitBtn.disabled = true;
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
         });
-        if (response.ok) {
-          contactForm.reset();
-          alert('Message sent successfully!');
-        } else {
-          throw new Error('Failed to send message');
-        }
-      } catch (error) {
-        alert('Error sending message. Please try again.');
-      } finally {
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        submitBtn.disabled = false;
-      }
+      };
+
+      initExperiencePopup();
+      initProjectPopup();
+      initAchievementPopup();
+      initMoreAboutMePopup();
+    };
+
+    // ========== Filter System ==========
+    const initFilter = () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const itemsToFilter = document.querySelectorAll('.experience-card');
+      const loadMoreBtn = document.querySelector('.load-more');
+      let visibleItems = 6;
+      let activeFilter = 'all';
+
+      if (!loadMoreBtn) return;
+
+      const updateFilters = (filter) => {
+        let shownItems = 0;
+        let totalMatchingItems = 0;
+
+        itemsToFilter.forEach(item => {
+          const matchesFilter = filter === 'all' || item.classList.contains(filter);
+          if (matchesFilter) totalMatchingItems++;
+        });
+
+        itemsToFilter.forEach(item => {
+          const matchesFilter = filter === 'all' || item.classList.contains(filter);
+          const shouldShow = matchesFilter && shownItems < visibleItems;
+
+          item.classList.toggle('hidden', !shouldShow);
+          item.style.display = shouldShow ? 'block' : 'none';
+
+          if (shouldShow) {
+            shownItems++;
+            item.classList.remove('visible');
+            setTimeout(() => item.classList.add('visible'), 50);
+          }
+        });
+
+        loadMoreBtn.style.display = shownItems < totalMatchingItems ? 'block' : 'none';
+      };
+
+      let filterTimeout;
+      const debounceFilter = (filter) => {
+        clearTimeout(filterTimeout);
+        filterTimeout = setTimeout(() => {
+          activeFilter = filter;
+          visibleItems = 6;
+          updateFilters(filter);
+        }, 100);
+      };
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          const filter = button.getAttribute('data-filter');
+          debounceFilter(filter);
+        });
+      });
+
+      loadMoreBtn.addEventListener('click', () => {
+        visibleItems += 6;
+        updateFilters(activeFilter);
+      });
+
+      updateFilters('all');
+    };
+
+    // ========== Dark Mode ==========
+    const initDarkMode = () => {
+      const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'btn btn-primary dark-mode-toggle';
+      toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      document.body.appendChild(toggleBtn);
+
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      document.body.classList.toggle('dark-mode', isDarkMode);
+      toggleBtn.querySelector('i').classList.toggle('fa-moon', !isDarkMode);
+      toggleBtn.querySelector('i').classList.toggle('fa-sun', isDarkMode);
+
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        toggleBtn.querySelector('i').classList.toggle('fa-moon', !isDark);
+        toggleBtn.querySelector('i').classList.toggle('fa-sun', isDark);
+        localStorage.setItem('darkMode', isDark);
+      });
+    };
+
+    // ========== Progress Bar ==========
+    const initProgressBar = () => {
+      const progressBar = document.querySelector('.progress-bar');
+      if (!progressBar) return;
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
+      });
+    };
+
+    // Initialize all
+    document.addEventListener('DOMContentLoaded', () => {
+      initNavbar();
+      handleScroll();
+      initAnimations();
+      initGlobalPopup();
+      initFilter();
+      initDarkMode();
+      initProgressBar();
     });
-  
   </script>
 </body>
 </html>
