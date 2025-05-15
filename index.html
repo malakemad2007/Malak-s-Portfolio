@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+h<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -654,6 +654,24 @@
     .experience-card .btn {
       margin-top: var(--space-sm);
     }
+
+
+    .experience-card .btn:hover {
+      background: var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    .experience-card .btn:active {
+      background: var(--primary-color);
+      color: var(--text-light);
+    }
+
+    .experience-card .btn:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+
 
     /* ========== Projects ========== */
     .project-card {
@@ -1379,148 +1397,194 @@
           <p class="luminary-tag">Luminary: Inspiring & Leading the Way</p>
         </div>
         <div class="about-image">
-          <img src="photo_2025-02-10_19-17-06.jpg" alt="Malak Emad" loading="lazy">
+          <img src="D:\Others\photo_2025-02-10_19-17-06.jpg" alt="Malak Emad" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
+
   <section id="experience" class="fade-in">
     <h2>Experience</h2>
-    <div class="container">
-      <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="leadership">Leadership</button>
-        <button class="filter-btn" data-filter="tech">Tech</button>
-        <button class="filter-btn" data-filter="social-media">Social Media</button>
-        <button class="filter-btn" data-filter="events">Events</button>
-      </div>
-      <div class="grid experience-grid">
-        <div class="experience-card leadership slide-in-left" data-date="Feb 2025 – Present" data-details="Founded a platform empowering students with scholarship resources and leadership skills." data-icon="fa-crown">
-          <span class="card-date">Feb 2025 – Present</span>
-          <h3>Founder — Dear Future Luminary</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card social-media slide-in-left" data-date="May 2023 – Sep 2023" data-details="Led social media strategy and designed posts to boost conference engagement." data-icon="fa-share-alt">
-          <span class="card-date">May 2023 – Sep 2023</span>
-          <h3>Head of Social Media — MAS MUN</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Apr 2024 – May 2024" data-details="Guided international dialogue circles fostering cross-cultural understanding." data-icon="fa-globe">
-          <span class="card-date">Apr 2024 – May 2024</span>
-          <h3>Facilitator — Soliya Global Circles</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card events slide-in-left" data-date="May 2023 – Jul 2023" data-details="Coordinated talks on youth empowerment, managing logistics and promotions." data-icon="fa-calendar-alt">
-          <span class="card-date">May 2023 – Jul 2023</span>
-          <h3>Event Organizer — TEDxEtTagammo</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Apr 2024" data-details="Completed Python fundamentals through Stanford’s global CS course." data-icon="fa-code">
-          <span class="card-date">Apr 2024</span>
-          <h3>Participant — Stanford Code in Place</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Oct 2023" data-details="Collaborated on earth science solutions during a hackathon." data-icon="fa-rocket">
-          <span class="card-date">Oct 2023</span>
-          <h3>Attendee — NASA Space Apps Cairo</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Jun 2023 – Aug 2023" data-details="Mentored by STEM leaders on science and leadership." data-icon="fa-chalkboard-teacher">
-          <span class="card-date">Jun 2023 – Aug 2023</span>
-          <h3>Participant — 1000 Girls, 1000 Futures</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Aug 2024 – Sep 2024" data-details="Led a team to first place in a business challenge." data-icon="fa-trophy">
-          <span class="card-date">Aug 2024 – Sep 2024</span>
-          <h3>Facilitator — Entrepreneurship Summer Camp</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card social-media slide-in-left" data-date="Feb 2024 – Present" data-details="Developed strategies to boost online visibility." data-icon="fa-share-alt">
-          <span class="card-date">Feb 2024 – Present</span>
-          <h3>Social Media Manager — Mr. Mahmoud ElKholy</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Jun 2023 – Aug 2023" data-details="Built a book review website empowering African girls." data-icon="fa-laptop-code">
-          <span class="card-date">Jun 2023 – Aug 2023</span>
-          <h3>Front-End Developer — Star Girls Africa</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Jan 2023 – Jun 2024" data-details="Developed front-end projects using HTML, CSS, and JavaScript." data-icon="fa-code">
-          <span class="card-date">Jan 2023 – Jun 2024</span>
-          <h3>Programming Intern — Kode with Klossy</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card social-media slide-in-left" data-date="Jul 2023 – Sep 2023" data-details="Managed content, trained volunteers, and increased audience engagement on social platforms." data-icon="fa-users">
-          <span class="card-date">Jul 2023 – Sep 2023</span>
-          <h3>Social Media Head — Resala STEM</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Jul 2023" data-details="Designed and conducted a workshop on teamwork and collaboration for student volunteers." data-icon="fa-chalkboard-teacher">
-          <span class="card-date">Jul 2023</span>
-          <h3>Training Leader — Resala STEM</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card social-media slide-in-left" data-date="Aug 2024 – Present" data-details="Created visual content, managed posts, and attracted students for an online educational center." data-icon="fa-palette">
-          <span class="card-date">Aug 2024 – Present</span>
-          <h3>Social Media Manager & Graphic Designer — AlMonqeth Academy</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Jul 2023 – Aug 2023" data-details="Completed a programming track focused on problem-solving and logic building." data-icon="fa-laptop-code">
-          <span class="card-date">Jul 2023 – Aug 2023</span>
-          <h3>Intern — Microsoft Student Ambassadors Learn</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Apr 2024" data-details="Joined an international debate on global issues with peers from diverse backgrounds." data-icon="fa-gavel">
-          <span class="card-date">Apr 2024</span>
-          <h3>Political Debater — Soliya Global Circles</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Jul 2024" data-details="Selected for an intensive summer entrepreneurship program empowering youth across Africa." data-icon="fa-lightbulb">
-          <span class="card-date">Jul 2024</span>
-          <h3>Scholar — BUILD in a Box</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Jul 2024" data-details="Learned web development basics while collaborating on tech projects with international girls." data-icon="fa-code">
-          <span class="card-date">Jul 2024</span>
-          <h3>Scholar — All Girls Code</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card tech slide-in-left" data-date="Aug 2023" data-details="Completed hands-on projects in front-end development and explored careers in tech." data-icon="fa-laptop-code">
-          <span class="card-date">Aug 2023</span>
-          <h3>Scholar — Girls Who Code (GWC)</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Jul 2023 – Aug 2023" data-details="Explored global citizenship and cross-cultural understanding through virtual exchange." data-icon="fa-globe">
-          <span class="card-date">Jul 2023 – Aug 2023</span>
-          <h3>Scholar — The Experiment Digital</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card events slide-in-left" data-date="Oct 2023" data-details="Engaged in climate policy dialogues and sustainability workshops with Egyptian youth." data-icon="fa-leaf">
-          <span class="card-date">Oct 2023</span>
-          <h3>Attendee — LCOY Egypt</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Mar 2024 – Apr 2024" data-details="Collaborated with international students on a global business consulting challenge." data-icon="fa-briefcase">
-          <span class="card-date">Mar 2024 – Apr 2024</span>
-          <h3>Participant — X-Culture</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card leadership slide-in-left" data-date="Sep 2023 – Dec 2023" data-details="Conducted a scientific project tackling real-world global challenges with STEM mentors." data-icon="fa-flask">
-          <span class="card-date">Sep 2023 – Dec 2023</span>
-          <h3>Researcher — Junior Academy (NYAS)</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="experience-card events slide-in-left" data-date="Jan 2024" data-details="Participated in discussions on youth-led climate action and sustainability initiatives." data-icon="fa-globe">
-          <span class="card-date">Jan 2024</span>
-          <h3>Attendee — International Youth Conference</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-      </div>
-      <button class="btn btn-primary load-more" style="margin: var(--space-lg) auto; display: block;">Load More</button>
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="leadership">Leadership</button>
+      <button class="filter-btn" data-filter="tech">Tech</button>
+      <button class="filter-btn" data-filter="social-media">Social Media</button>
+      <button class="filter-btn" data-filter="events">Events</button>
     </div>
+
+<div class="container">
+  <div class="grid experience-container">
+    <!-- Leadership Experiences -->
+    <div class="experience-card leadership" data-date="Jun 2024 – Aug 2024" data-details="Being part of AFS was a game-changer. I explored cultural exchange on a global level, learned how to adapt to diverse environments, and practiced real-time global citizenship. It sharpened my communication and leadership skills while fueling my passion for intercultural understanding." data-icon="fa-globe">
+      <span class="card-date">Jun 2024 – Aug 2024</span>
+      <h3>Scholar — AFS</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card tech" data-date="Jan 2023 – Jun 2024" data-details="Kode with Klossy was a transformative experience in code. I dove into front-end development, collaborating with a powerhouse team of girls to build a project from scratch. I gained confidence in HTML, CSS, and JavaScript while redefining what tech leadership looks like for young women." data-icon="fa-code">
+      <span class="card-date">Jan 2023 – Jun 2024</span>
+      <h3>Programming Intern — Kode with Klossy</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card tech" data-date="Apr 2024" data-details="Studying Stanford's CS106A introduced me to real programming logic. I learned Python and developed a love for solving problems using tech. It showed me that coding isn't just about syntax — it's a language of creativity and innovation." data-icon="fa-code">
+      <span class="card-date">Apr 2024</span>
+      <h3>Participant — Stanford Code in Place</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Sep 2023 – Dec 2023" data-details="As a Junior Academy researcher, I teamed up with a global squad to tackle real-world STEM challenges. I honed research methods, project management, and critical thinking while gaining insights into sustainability and innovation through the lens of science." data-icon="fa-flask">
+      <span class="card-date">Sep 2023 – Dec 2023</span>
+      <h3>Researcher — Junior Academy (NYAS)</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Jun 2024 – Aug 2024" data-details="At Girls Who Code, I was surrounded by inspiring women in STEM. It wasn't just about learning code — it was about breaking stereotypes. I worked on empowering tech projects and left with stronger skills in teamwork, resilience, and Python." data-icon="fa-laptop-code">
+      <span class="card-date">Jun 2024 – Aug 2024</span>
+      <h3>Scholar — Girls Who Code (GWC)</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Aug 2024" data-details="BUILD taught me that entrepreneurship isn't just business — it's social impact with a strategy. I created a full business plan, learned how to pitch, and walked away with a mindset focused on innovation and problem-solving." data-icon="fa-lightbulb">
+      <span class="card-date">Aug 2024</span>
+      <h3>Scholar — BUILD in a Box</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Aug 2023" data-details="All Girls Code was all about embracing my power in tech. From brainstorming to actual coding, I gained experience in app development and how to collaborate effectively on software projects. Also, the sisterhood was unmatched." data-icon="fa-chalkboard-teacher">
+      <span class="card-date">Aug 2023</span>
+      <h3>Scholar — All Girls Code</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Jul 2023 – Sep 2023" data-details="This was a global community of changemakers. I tackled themes like peacebuilding, diversity, and leadership through virtual workshops. I developed cross-cultural communication skills and fell in love with the idea of digital diplomacy." data-icon="fa-globe-americas">
+      <span class="card-date">Jul 2023 – Sep 2023</span>
+      <h3>Scholar — The Experiment Digital</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Jun 2023 – Aug 2023" data-details="With mentorship from top scientists and innovators, this program deepened my understanding of STEM careers. It taught me networking, career planning, and how to turn my ambition into actionable steps. Plus, the female empowerment energy was real." data-icon="fa-chalkboard-teacher">
+      <span class="card-date">Jun 2023 – Aug 2023</span>
+      <h3>Participant — 1000 Girls, 1000 Futures</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Mar 2024 – May 2024" data-details="I joined a global team to develop a business solution for a real international company. Think deadlines, time zones, and strategy meetings with people across continents — basically a crash course in global business and teamwork." data-icon="fa-users">
+      <span class="card-date">Mar 2024 – May 2024</span>
+      <h3>Participant — X-Culture</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Apr 2024" data-details="I debated with youth from across the globe on political, social, and cultural issues. It expanded my worldview, improved my argumentation, and trained me to listen and speak with intention in polarized discussions." data-icon="fa-gavel">
+      <span class="card-date">Apr 2024</span>
+      <h3>Political Debater — Soliya Global Circles</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Apr 2024 – May 2024" data-details="Leveling up from participant to facilitator was a significant milestone. I guided cross-cultural dialogues, kept conversations meaningful and respectful, and learned conflict resolution in real time. It was leadership on a global scale." data-icon="fa-globe">
+      <span class="card-date">Apr 2024 – May 2024</span>
+      <h3>Facilitator — Soliya Global Circles</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Aug 2024 – Sep 2024" data-details="I helped teens ideate and pitch solutions to Africa's pressing challenges. I assigned roles, mentored teams, and ensured execution. It polished my skills in project leadership, mentoring, and facilitation — all while staying impact-driven." data-icon="fa-trophy">
+      <span class="card-date">Aug 2024 – Sep 2024</span>
+      <h3>Facilitator — Entrepreneurship Summer Camp</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card events" data-date="May 2023 – Jul 2023" data-details="Organizing TEDx taught me how to manage chaos gracefully. I handled logistics, communications, and backstage drama while working with a team of creatives. It showed me the power of storytelling and the magic behind big ideas." data-icon="fa-calendar-alt">
+      <span class="card-date">May 2023 – Jul 2023</span>
+      <h3>Event Organizer — TEDxEtTagammo</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card social-media" data-date="May 2023 – Sep 2023" data-details="As Head of Social Media, I crafted the voice of MAS MUN. From designing posts to managing engagement, I fused creativity with strategic thinking. It gave me a behind-the-scenes view of diplomacy and branding." data-icon="fa-share-alt">
+      <span class="card-date">May 2023 – Sep 2023</span>
+      <h3>Head of Social Media — MAS MUN</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card social-media" data-date="Jul 2023 – Sep 2023" data-details="Double threat: I ran the socials and led training on teamwork. I created content strategies and also mentored younger members. It sharpened my leadership and communication — and gave me space to empower others." data-icon="fa-users">
+      <span class="card-date">Jul 2023 – Sep 2023</span>
+      <h3>Social Media Head — Resala STEM</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Jul 2023" data-details="Double threat: I ran the socials and led training on teamwork. I created content strategies and also mentored younger members. It sharpened my leadership and communication — and gave me space to empower others." data-icon="fa-chalkboard-teacher">
+      <span class="card-date">Jul 2023</span>
+      <h3>Training Leader — Resala STEM</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card tech" data-date="Jun 2023 – Aug 2023" data-details="I helped build a book review site as a front-end dev. It was my first time translating designs into code for a real cause. I learned how to debug, collaborate with backend teammates, and deliver under pressure." data-icon="fa-laptop-code">
+      <span class="card-date">Jun 2023 – Aug 2023</span>
+      <h3>Front-End Developer — Star Girls Africa</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card tech" data-date="Oct 2023" data-details="I got a taste of space innovation and met brilliant minds solving real NASA challenges. It opened my eyes to astro-tech and how global collaboration can power science solutions." data-icon="fa-rocket">
+      <span class="card-date">Oct 2023</span>
+      <h3>Attendee — NASA Space Apps Cairo</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Oct 2023" data-details="This was a youth-led climate powerhouse. I attended workshops on climate justice, solutions, and youth participation. It fueled my eco-activism and made me even more passionate about sustainability and advocacy." data-icon="fa-leaf">
+      <span class="card-date">Oct 2023</span>
+      <h3>Attendee — LCOY Egypt</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Mar 2024" data-details="I tuned into global development goals and youth impact. I gained exposure to what young leaders are doing worldwide — from education reform to environmental action." data-icon="fa-globe-europe">
+      <span class="card-date">Mar 2024</span>
+      <h3>Attendee — International Youth Conference</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card social-media" data-date="Feb 2024 – Present" data-details="Working with a math teacher meant turning equations into content. I designed posts, boosted his page's growth, and created engaging math quizzes. It taught me how to balance education with aesthetic appeal." data-icon="fa-share-alt">
+      <span class="card-date">Feb 2024 – Present</span>
+      <h3>Social Media Manager — Mr. Mahmoud ElKholy</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card social-media" data-date="Aug 2024 – Present" data-details="I managed the academy's online presence — from creating posts to setting visual brand guidelines. I juggled graphics, captions, and marketing strategy while learning audience engagement and analytics." data-icon="fa-palette">
+      <span class="card-date">Aug 2024 – Present</span>
+      <h3>Social Media Manager & Graphic Designer — AlMonqeth Academy</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card tech" data-date="Jul 2023 – Aug 2023" data-details="This was my intro to the tech world from Microsoft's lens. I completed programming courses, interacted with tech mentors, and leveled up my coding fundamentals and problem-solving." data-icon="fa-laptop-code">
+      <span class="card-date">Jul 2023 – Aug 2023</span>
+      <h3>Intern — Microsoft Student Ambassadors Learn</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+    
+    <div class="experience-card leadership" data-date="Feb 2025 – Present" data-details="This is my baby. I created it to help high schoolers find scholarships, summer programs, and personal growth tools. It's not just a platform — it's a movement to make ambition accessible for youth everywhere." data-icon="fa-crown">
+      <span class="card-date">Feb 2025 – Present</span>
+      <h3>Founder — Dear Future Luminary</h3>
+      <button class="btn btn-accent view-details">View Details</button>
+    </div>
+  </div>
+  
+  <div class="load-more-container" style="text-align: center; margin-top: 2rem;">
+    <button class="btn btn-primary load-more">Load More</button>
+  </div>
+</div>
+</section>
+
+    <!-- Popup Container -->
+  <div id="global-popup" class="global-popup">
+    <div class="global-popup-content">
+      <span class="global-popup-close">&times;</span>
+      <h2 id="global-popup-title"></h2>
+      <div id="global-popup-details"></div>
+    </div>
+  </div>
+
   </section>
+  
 
   <!-- Projects -->
   <section id="projects" class="fade-in">
@@ -1568,11 +1632,26 @@
     <h2>Achievements</h2>
     <div class="container">
       <div class="grid achievements-container">
+
+        <div class="achievement-card slide-in-left" data-date="2024" data-details="Won a gold medal by addressing climate challenges with innovative solutions." data-icon="fa-medal">
+          <span class="card-date">2024</span>
+          <h3>Gold Medal Winner — Climate Science Olympiad</h3>
+          <button class="btn btn-accent view-details">View Details</button>
+        </div>
+
         <div class="achievement-card slide-in-left" data-date="2023-2024" data-details="Awarded twice in 2023 and 2024 for scientific excellence and teamwork, leading innovative projects." data-icon="fa-trophy">
           <span class="card-date">2023-2024</span>
           <h3>Best Scientific Team Award — Egyptian Students' Union</h3>
           <button class="btn btn-accent view-details">View Details</button>
         </div>
+
+
+        <div class="achievement-card slide-in-left" data-date="2024" data-details="Led team to first place in a business challenge, showcasing leadership and teamwork." data-icon="fa-trophy">
+          <span class="card-date">2024</span>
+          <h3>First Place Winner — Entrepreneurship Summer Camp</h3>
+          <button class="btn btn-accent view-details">View Details</button>
+        </div>
+        
         <div class="achievement-card slide-in-left" data-date="2023" data-details="Qualified for pre-finals with a Biology paper and Electromagnetism video, showcasing creativity." data-icon="fa-medal">
           <span class="card-date">2023</span>
           <h3>Pre-Final Competitor — Behind The Universe LLC</h3>
@@ -1583,16 +1662,8 @@
           <h3>Mathematics Competitor — IYMC</h3>
           <button class="btn btn-accent view-details">View Details</button>
         </div>
-        <div class="achievement-card slide-in-left" data-date="2024" data-details="Won a gold medal by addressing climate challenges with innovative solutions." data-icon="fa-medal">
-          <span class="card-date">2024</span>
-          <h3>Gold Medal Winner — Climate Science Olympiad</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
-        <div class="achievement-card slide-in-left" data-date="2024" data-details="Led team to first place in a business challenge, showcasing leadership and teamwork." data-icon="fa-trophy">
-          <span class="card-date">2024</span>
-          <h3>First Place Winner — Entrepreneurship Summer Camp</h3>
-          <button class="btn btn-accent view-details">View Details</button>
-        </div>
+        
+        
       </div>
     </div>
   </section>
@@ -1654,205 +1725,256 @@
           <a href="#experience" class="footer-link">Experience</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
-        <p class="copyright">© 2023 Malak Emad. All rights reserved.</p>
+        <p class="copyright">© 2025 Malak Emad. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <button class="btn btn-primary dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
 
-  <script>
-    // ========== Navbar ==========
-    const initNavbar = () => {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navbar = document.querySelector('#navbar');
+  <script> 
+  // ========== Navbar ==========
+const initNavbar = () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('#navbar');
 
-      if (menuToggle && navbar) {
-        menuToggle.addEventListener('click', () => {
-          navbar.classList.toggle('active');
-          menuToggle.querySelector('i').classList.toggle('fa-bars');
-          menuToggle.querySelector('i').classList.toggle('fa-times');
-        });
+  if (menuToggle && navbar) {
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuToggle.querySelector('i').classList.toggle('fa-bars');
+      menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+  } else {
+    console.error('Menu toggle or navbar not found.');
+  }
+};
+
+// ========== Scroll Highlight ==========
+const handleScroll = () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('#navbar ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= sectionTop - 80) {
+        current = section.getAttribute('id');
       }
-    };
+    });
 
-    // ========== Scroll Highlight ==========
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('#navbar ul li a');
-
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          if (window.scrollY >= sectionTop - 80) {
-            current = section.getAttribute('id');
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-          }
-        });
-      });
-    };
-
-    // ========== Animation Observer ==========
-    const initAnimations = () => {
-      const elements = document.querySelectorAll('.fade-in, .slide-in-left');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      elements.forEach(element => observer.observe(element));
-    };
-
-    // ========== Unified Popup Handler ==========
-    const initGlobalPopup = () => {
-      const globalPopup = document.querySelector('#global-popup');
-      const globalPopupTitle = globalPopup?.querySelector('#global-popup-title');
-      const globalPopupDetails = globalPopup?.querySelector('#global-popup-details');
-      const closeBtn = globalPopup?.querySelector('.global-popup-close');
-
-      if (!globalPopup || !globalPopupTitle || !globalPopupDetails || !closeBtn) return;
-
-      closeBtn.addEventListener('click', () => {
-        globalPopup.classList.remove('active');
-      });
-
-      globalPopup.addEventListener('click', (e) => {
-        if (e.target === globalPopup) {
-          globalPopup.classList.remove('active');
-        }
-      });
-
-      // Experience Popup
-      const initExperiencePopup = () => {
-        const experienceCards = document.querySelectorAll('.experience-card');
-
-        experienceCards.forEach(card => {
-          const viewDetailsBtn = card.querySelector('.view-details');
-          if (viewDetailsBtn) {
-            viewDetailsBtn.addEventListener('click', () => {
-              const title = card.querySelector('h3')?.textContent || 'No Title';
-              const date = card.getAttribute('data-date') || '';
-              const details = card.getAttribute('data-details') || 'No details available.';
-              const icon = card.getAttribute('data-icon') || 'fa-briefcase';
-              globalPopupTitle.textContent = title;
-              globalPopupDetails.innerHTML = `
-                <div class="global-popup-item">
-                  <i class="fas ${icon}"></i>
-                  <div class="global-popup-item-content">
-                    <strong>${date}</strong>
-                    <p>${details}</p>
-                  </div>
-                </div>
-              `;
-              globalPopup.classList.add('active');
-            });
-          }
-        });
-      };
-
-// Project Popup
-const initProjectPopup = () => {
-  const projectCards = document.querySelectorAll('.project-card');
-
-  projectCards.forEach(card => {
-    const viewDetailsBtn = card.querySelector('.view-details');
-    const viewProjectBtn = card.querySelector('.view-project');
-    const title = card.querySelector('h3')?.textContent?.trim() || 'Project';
-
-    // Custom View Project links based on title
-    let projectLink = null;
-
-    if (title === 'Book Review Website') {
-      projectLink = 'https://malakemad2007.github.io/Online-Book-Review-Website/';
-    } else if (title === 'Climate Research Paper') {
-      projectLink = '#climate-research-paper'; // Placeholder, update with actual link later
-    } else if (title === 'My Portfolio') {
-      projectLink = 'https://malakemad2007.github.io/Malak-s-Portfolio/index.html';
-    } else if (title === 'Optimizing Crop Growth') {
-      // Hide the view project button entirely for this one
-      if (viewProjectBtn) {
-        viewProjectBtn.style.display = 'none';
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').slice(1) === current) {
+        link.classList.add('active');
       }
-    }
-
-    // View Details logic
-    if (viewDetailsBtn) {
-      viewDetailsBtn.addEventListener('click', () => {
-        const date = card.getAttribute('data-date') || '';
-        const details = card.getAttribute('data-details') || 'No details available.';
-        const tags = card.getAttribute('data-tags')?.split(',') || [];
-        const icon = card.getAttribute('data-icon') || 'fa-project-diagram';
-
-        globalPopupTitle.textContent = title;
-        globalPopupDetails.innerHTML = `
-          <div class="global-popup-item">
-            <i class="fas ${icon}"></i>
-            <div class="global-popup-item-content">
-              <strong>${date}</strong>
-              <p>${details}</p>
-              <div class="global-popup-tags">
-                ${tags.map(tag => `<span class="global-popup-tag">${tag.trim()}</span>`).join('')}
-              </div>
-            </div>
-          </div>
-        `;
-        globalPopup.classList.add('active');
-      });
-    }
-
-    // View Project logic
-    if (viewProjectBtn && projectLink) {
-      viewProjectBtn.addEventListener('click', () => {
-        window.open(projectLink, '_blank'); // Open in a new tab
-      });
-    }
+    });
   });
 };
 
-      // Achievement Popup
-      const initAchievementPopup = () => {
-        const achievementCards = document.querySelectorAll('.achievement-card');
+// ========== Animation Observer ==========
+const initAnimations = () => {
+  const elements = document.querySelectorAll('.fade-in, .slide-in-left');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-        achievementCards.forEach(card => {
-          const viewDetailsBtn = card.querySelector('.view-details');
-          if (viewDetailsBtn) {
-            viewDetailsBtn.addEventListener('click', () => {
-              const title = card.querySelector('h3')?.textContent || 'No Title';
-              const date = card.getAttribute('data-date') || '';
-              const details = card.getAttribute('data-details') || 'No details available.';
-              const icon = card.getAttribute('data-icon') || 'fa-trophy';
-              globalPopupTitle.textContent = title;
-              globalPopupDetails.innerHTML = `
-                <div class="global-popup-item">
-                  <i class="fas ${icon}"></i>
-                  <div class="global-popup-item-content">
-                    <strong>${date}</strong>
-                    <p>${details}</p>
-                  </div>
-                </div>
-              `;
-              globalPopup.classList.add('active');
-            });
-          }
+  elements.forEach(element => observer.observe(element));
+};
+
+// ========== Filter System ==========
+const initFilter = () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const experienceCards = document.querySelectorAll('.experience-card');
+  const loadMoreBtn = document.querySelector('.load-more');
+  let visibleItems = 6;
+  let activeFilter = 'all';
+
+  if (!loadMoreBtn) {
+    console.error('Load More button not found.');
+    return;
+  }
+
+  const updateFilters = (filter) => {
+    console.log('Applying filter:', filter);
+    let shownItems = 0;
+    let totalMatchingItems = 0;
+
+    experienceCards.forEach(card => {
+      const matchesFilter = filter === 'all' || card.classList.contains(filter);
+      if (matchesFilter) totalMatchingItems++;
+    });
+
+    experienceCards.forEach(card => {
+      const matchesFilter = filter === 'all' || card.classList.contains(filter);
+      const shouldShow = matchesFilter && shownItems < visibleItems;
+
+      if (shouldShow) {
+        card.style.display = 'block';
+        shownItems++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    loadMoreBtn.style.display = shownItems < totalMatchingItems ? 'block' : 'none';
+  };
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.getAttribute('data-filter');
+      activeFilter = filter;
+      visibleItems = 6;
+      updateFilters(filter);
+    });
+  });
+
+  loadMoreBtn.addEventListener('click', () => {
+    console.log('Load More clicked');
+    visibleItems += 6;
+    updateFilters(activeFilter);
+  });
+
+  updateFilters('all');
+};
+
+// ========== Popup Handler ==========
+const initGlobalPopup = () => {
+  const globalPopup = document.getElementById('global-popup');
+  const globalPopupTitle = document.getElementById('global-popup-title');
+  const globalPopupDetails = document.getElementById('global-popup-details');
+  const closeBtn = document.querySelector('.global-popup-close');
+
+  if (!globalPopup || !globalPopupTitle || !globalPopupDetails || !closeBtn) {
+    console.error('One or more popup elements are missing.');
+    return;
+  }
+
+  // Close popup on button click
+  closeBtn.addEventListener('click', () => {
+    globalPopup.classList.remove('active');
+  });
+
+  // Close popup on background click
+  globalPopup.addEventListener('click', (e) => {
+    if (e.target === globalPopup) {
+      globalPopup.classList.remove('active');
+    }
+  });
+
+  // Experience Popup
+  const initExperiencePopup = () => {
+    const experienceCards = document.querySelectorAll('.experience-card');
+
+    experienceCards.forEach(card => {
+      const viewDetailsBtn = card.querySelector('.view-details');
+      if (viewDetailsBtn) {
+        viewDetailsBtn.addEventListener('click', () => {
+          const title = card.querySelector('h3')?.textContent || 'No Title';
+          const date = card.getAttribute('data-date') || '';
+          const details = card.getAttribute('data-details') || 'No details available.';
+          const icon = card.getAttribute('data-icon') || 'fa-briefcase';
+
+          globalPopupTitle.textContent = title;
+          globalPopupDetails.innerHTML = `
+            <div class="global-popup-item">
+              <i class="fas ${icon}"></i>
+              <div class="global-popup-item-content">
+                <strong>${date}</strong>
+                <p>${details}</p>
+              </div>
+            </div>
+          `;
+          globalPopup.classList.add('active');
         });
-      };
+      }
+    });
+  };
 
-      // More About Me Popup
-      const initMoreAboutMePopup = () => {
-        const moreAboutMeCards = document.querySelectorAll('.more-about-me-card');
+  // Project Popup
+  const initProjectPopup = () => {
+    const projectCards = document.querySelectorAll('.project-card');
 
-        const skills = [
+    projectCards.forEach(card => {
+      const viewDetailsBtn = card.querySelector('.view-details');
+      const viewProjectBtn = card.querySelector('.view-project');
+
+      if (viewDetailsBtn) {
+        viewDetailsBtn.addEventListener('click', () => {
+          const title = card.querySelector('h3')?.textContent || 'No Title';
+          const date = card.getAttribute('data-date') || '';
+          const details = card.getAttribute('data-details') || 'No details available.';
+          const tags = card.getAttribute('data-tags')?.split(',') || [];
+          const icon = card.getAttribute('data-icon') || 'fa-project-diagram';
+          globalPopupTitle.textContent = title;
+          globalPopupDetails.innerHTML = `
+            <div class="global-popup-item">
+              <i class="fas ${icon}"></i>
+              <div class="global-popup-item-content">
+                <strong>${date}</strong>
+                <p>${details}</p>
+                <div class="global-popup-tags">
+                  ${tags.map(tag => `<span class="global-popup-tag">${tag}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+          `;
+          globalPopup.classList.add('active');
+        });
+      }
+
+      if (viewProjectBtn) {
+        viewProjectBtn.addEventListener('click', () => {
+          const title = card.querySelector('h3')?.textContent || 'Project';
+          alert(`Redirecting to ${title} project page (placeholder)`);
+        });
+      }
+    });
+  };
+
+  // Achievement Popup
+  const initAchievementPopup = () => {
+    const achievementCards = document.querySelectorAll('.achievement-card');
+
+    achievementCards.forEach(card => {
+      const viewDetailsBtn = card.querySelector('.view-details');
+      if (viewDetailsBtn) {
+        viewDetailsBtn.addEventListener('click', () => {
+          const title = card.querySelector('h3')?.textContent || 'No Title';
+          const date = card.getAttribute('data-date') || '';
+          const details = card.getAttribute('data-details') || 'No details available.';
+          const icon = card.getAttribute('data-icon') || 'fa-trophy';
+          globalPopupTitle.textContent = title;
+          globalPopupDetails.innerHTML = `
+            <div class="global-popup-item">
+              <i class="fas ${icon}"></i>
+              <div class="global-popup-item-content">
+                <strong>${date}</strong>
+                <p>${details}</p>
+              </div>
+            </div>
+          `;
+          globalPopup.classList.add('active');
+        });
+      }
+    });
+  };
+
+  // More About Me Popup
+  const initMoreAboutMePopup = () => {
+    const moreAboutMeCards = document.querySelectorAll('.more-about-me-card');
+
+    const skills = [
   {
     name: 'Leadership',
     icon: 'fa-crown',
@@ -1924,181 +2046,111 @@ const hobbies = [
 ];
 
 
-        const languages = [
-          { name: 'Arabic', level: 'Native', details: 'Fluent in both written and spoken Arabic.', stars: 5, icon: 'fa-globe' },
-          { name: 'English', level: 'Fluent', details: 'Proficient in professional and academic English.', stars: 4, icon: 'fa-globe' },
-          { name: 'German', level: 'Beginner', details: 'Basic understanding of German.', stars: 2, icon: 'fa-globe' },
-          { name: 'Spanish', level: 'Beginner', details: 'Introductory knowledge of Spanish.', stars: 2, icon: 'fa-globe' }
-        ];
+    const languages = [
+      { name: 'Arabic', level: 'Native', details: 'Fluent in both written and spoken Arabic.', stars: 5, icon: 'fa-globe' },
+      { name: 'English', level: 'Fluent', details: 'Proficient in professional and academic English.', stars: 4, icon: 'fa-globe' },
+      { name: 'German', level: 'Beginner', details: 'Basic understanding of German.', stars: 2, icon: 'fa-globe' },
+      { name: 'Spanish', level: 'Beginner', details: 'Introductory knowledge of Spanish.', stars: 2, icon: 'fa-globe' }
+    ];
 
-        moreAboutMeCards.forEach(card => {
-          card.addEventListener('click', () => {
-            const category = card.getAttribute('data-category');
-            globalPopupTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-            globalPopupDetails.innerHTML = '';
+    moreAboutMeCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const category = card.getAttribute('data-category');
+        globalPopupTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+        globalPopupDetails.innerHTML = '';
 
-            if (category === 'skills') {
-              skills.forEach(skill => {
-                const skillDiv = document.createElement('div');
-                skillDiv.className = 'global-popup-item';
-                skillDiv.innerHTML = `
-                  <i class="fas ${skill.icon}"></i>
-                  <div class="global-popup-item-content">
-                    <strong>${skill.name}</strong>
-                    <p>${skill.details}</p>
-                  </div>
-                `;
-                globalPopupDetails.appendChild(skillDiv);
-              });
-            } else if (category === 'hobbies') {
-              hobbies.forEach(hobby => {
-                const hobbyDiv = document.createElement('div');
-                hobbyDiv.className = 'global-popup-item';
-                hobbyDiv.innerHTML = `
-                  <i class="fas ${hobby.icon}"></i>
-                  <div class="global-popup-item-content">
-                    <strong>${hobby.name}</strong>
-                    <p>${hobby.details}</p>
-                  </div>
-                `;
-                globalPopupDetails.appendChild(hobbyDiv);
-              });
-            } else if (category === 'languages') {
-              languages.forEach(lang => {
-                const langDiv = document.createElement('div');
-                langDiv.className = 'global-popup-item';
-                const stars = Array(5).fill().map((_, i) => `
-                  <i class="fas fa-star ${i < lang.stars ? 'filled' : ''}"></i>
-                `).join('');
-                langDiv.innerHTML = `
-                  <i class="fas ${lang.icon}"></i>
-                  <div class="global-popup-item-content">
-                    <strong>${lang.name}</strong>
-                    <div class="star-rating">${stars}</div>
-                    <p>${lang.level}: ${lang.details}</p>
-                  </div>
-                `;
-                globalPopupDetails.appendChild(langDiv);
-              });
-            }
-
-            globalPopup.classList.add('active');
+        if (category === 'skills') {
+          skills.forEach(skill => {
+            const skillDiv = document.createElement('div');
+            skillDiv.className = 'global-popup-item';
+            skillDiv.innerHTML = `
+              <i class="fas ${skill.icon}"></i>
+              <div class="global-popup-item-content">
+                <strong>${skill.name}</strong>
+                <p>${skill.details}</p>
+              </div>
+            `;
+            globalPopupDetails.appendChild(skillDiv);
           });
-        });
-      };
+        } else if (category === 'hobbies') {
+          hobbies.forEach(hobby => {
+            const hobbyDiv = document.createElement('div');
+            hobbyDiv.className = 'global-popup-item';
+            hobbyDiv.innerHTML = `
+              <i class="fas ${hobby.icon}"></i>
+              <div class="global-popup-item-content">
+                <strong>${hobby.name}</strong>
+                <p>${hobby.details}</p>
+              </div>
+            `;
+            globalPopupDetails.appendChild(hobbyDiv);
+          });
+        } else if (category === 'languages') {
+          languages.forEach(lang => {
+            const langDiv = document.createElement('div');
+            langDiv.className = 'global-popup-item';
+            const stars = Array(5).fill().map((_, i) => `
+              <i class="fas fa-star ${i < lang.stars ? 'filled' : ''}"></i>
+            `).join('');
+            langDiv.innerHTML = `
+              <i class="fas ${lang.icon}"></i>
+              <div class="global-popup-item-content">
+                <strong>${lang.name}</strong>
+                <div class="star-rating">${stars}</div>
+                <p>${lang.level}: ${lang.details}</p>
+              </div>
+            `;
+            globalPopupDetails.appendChild(langDiv);
+          });
+        }
 
-      initExperiencePopup();
-      initProjectPopup();
-      initAchievementPopup();
-      initMoreAboutMePopup();
-    };
-// ========== Filter System ==========
-const initFilter = () => {
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const itemsToFilter = document.querySelectorAll('.experience-card');
-      const loadMoreBtn = document.querySelector('.load-more');
-      let visibleItems = 6;
-      let activeFilter = 'all';
-
-      if (!loadMoreBtn) return;
-
-      const updateFilters = (filter) => {
-        let shownItems = 0;
-        let totalMatchingItems = 0;
-
-        itemsToFilter.forEach(item => {
-          const matchesFilter = filter === 'all' || item.classList.contains(filter);
-          if (matchesFilter) totalMatchingItems++;
-        });
-
-        itemsToFilter.forEach(item => {
-          const matchesFilter = filter === 'all' || item.classList.contains(filter);
-          const shouldShow = matchesFilter && shownItems < visibleItems;
-
-          item.classList.toggle('hidden', !shouldShow);
-          item.style.display = shouldShow ? 'block' : 'none';
-
-          if (shouldShow) {
-            shownItems++;
-            item.classList.remove('visible');
-            setTimeout(() => item.classList.add('visible'), 50);
-          }
-        });
-
-        loadMoreBtn.style.display = shownItems < totalMatchingItems ? 'block' : 'none';
-      };
-
-      let filterTimeout;
-      const debounceFilter = (filter) => {
-        clearTimeout(filterTimeout);
-        filterTimeout = setTimeout(() => {
-          activeFilter = filter;
-          visibleItems = 6;
-          updateFilters(filter);
-        }, 100);
-      };
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-          const filter = button.getAttribute('data-filter');
-          debounceFilter(filter);
-        });
+        globalPopup.classList.add('active');
       });
-
-      loadMoreBtn.addEventListener('click', () => {
-        visibleItems += 6;
-        updateFilters(activeFilter);
-      });
-
-      updateFilters('all');
-    };
-
-    // ========== Dark Mode ==========
-    const initDarkMode = () => {
-      const toggleBtn = document.createElement('button');
-      toggleBtn.className = 'btn btn-primary dark-mode-toggle';
-      toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-      document.body.appendChild(toggleBtn);
-
-      const isDarkMode = localStorage.getItem('darkMode') === 'true';
-      document.body.classList.toggle('dark-mode', isDarkMode);
-      toggleBtn.querySelector('i').classList.toggle('fa-moon', !isDarkMode);
-      toggleBtn.querySelector('i').classList.toggle('fa-sun', isDarkMode);
-
-      toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        toggleBtn.querySelector('i').classList.toggle('fa-moon', !isDark);
-        toggleBtn.querySelector('i').classList.toggle('fa-sun', isDark);
-        localStorage.setItem('darkMode', isDark);
-      });
-    };
-
-    // ========== Progress Bar ==========
-    const initProgressBar = () => {
-      const progressBar = document.querySelector('.progress-bar');
-      if (!progressBar) return;
-
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = `${scrollPercent}%`;
-      });
-    };
-
-    // Initialize all
-    document.addEventListener('DOMContentLoaded', () => {
-      initNavbar();
-      handleScroll();
-      initAnimations();
-      initGlobalPopup();
-      initFilter();
-      initDarkMode();
-      initProgressBar();
     });
-  </script>
+  };
+
+  // Initialize all popup types
+  initExperiencePopup();
+  initProjectPopup();
+  initAchievementPopup();
+  initMoreAboutMePopup();
+};
+
+// ========== Progress Bar ==========
+const initProgressBar = () => {
+  const progressBar = document.querySelector('.progress-bar');
+  if (!progressBar) {
+    console.error('Progress bar not found.');
+    return;
+  }
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = `${scrollPercent}%`;
+  });
+};
+
+// ========== Dark Mode (Placeholder) ==========
+const initDarkMode = () => {
+  // Add dark mode logic if implemented, e.g., toggle a class on body
+  console.log('Dark mode initialization (placeholder)');
+};
+
+// ========== Initialize All ==========
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM loaded, initializing...');
+  initNavbar();
+  handleScroll();
+  initAnimations();
+  initGlobalPopup();
+  initFilter();
+  initDarkMode();
+  initProgressBar();
+});
+
+</script>
+
 </body>
 </html>
