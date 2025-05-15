@@ -1761,46 +1761,64 @@
         });
       };
 
-      // Project Popup
-      const initProjectPopup = () => {
-        const projectCards = document.querySelectorAll('.project-card');
+// Project Popup
+const initProjectPopup = () => {
+  const projectCards = document.querySelectorAll('.project-card');
 
-        projectCards.forEach(card => {
-          const viewDetailsBtn = card.querySelector('.view-details');
-          const viewProjectBtn = card.querySelector('.view-project');
+  projectCards.forEach(card => {
+    const viewDetailsBtn = card.querySelector('.view-details');
+    const viewProjectBtn = card.querySelector('.view-project');
+    const title = card.querySelector('h3')?.textContent?.trim() || 'Project';
 
-          if (viewDetailsBtn) {
-            viewDetailsBtn.addEventListener('click', () => {
-              const title = card.querySelector('h3')?.textContent || 'No Title';
-              const date = card.getAttribute('data-date') || '';
-              const details = card.getAttribute('data-details') || 'No details available.';
-              const tags = card.getAttribute('data-tags')?.split(',') || [];
-              const icon = card.getAttribute('data-icon') || 'fa-project-diagram';
-              globalPopupTitle.textContent = title;
-              globalPopupDetails.innerHTML = `
-                <div class="global-popup-item">
-                  <i class="fas ${icon}"></i>
-                  <div class="global-popup-item-content">
-                    <strong>${date}</strong>
-                    <p>${details}</p>
-                    <div class="global-popup-tags">
-                      ${tags.map(tag => `<span class="global-popup-tag">${tag}</span>`).join('')}
-                    </div>
-                  </div>
-                </div>
-              `;
-              globalPopup.classList.add('active');
-            });
-          }
+    // Custom View Project links based on title
+    let projectLink = null;
 
-          if (viewProjectBtn) {
-            viewProjectBtn.addEventListener('click', () => {
-              const title = card.querySelector('h3')?.textContent || 'Project';
-              alert(`Redirecting to ${title} project page (placeholder)`);
-            });
-          }
-        });
-      };
+    if (title === 'Book Review Website') {
+      projectLink = 'https://malakemad2007.github.io/Online-Book-Review-Website/';
+    } else if (title === 'Climate Research Paper') {
+      projectLink = '#climate-research-paper'; // Placeholder, update with actual link later
+    } else if (title === 'My Portfolio') {
+      projectLink = 'https://malakemad2007.github.io/Malak-s-Portfolio/index.html';
+    } else if (title === 'Optimizing Crop Growth') {
+      // Hide the view project button entirely for this one
+      if (viewProjectBtn) {
+        viewProjectBtn.style.display = 'none';
+      }
+    }
+
+    // View Details logic
+    if (viewDetailsBtn) {
+      viewDetailsBtn.addEventListener('click', () => {
+        const date = card.getAttribute('data-date') || '';
+        const details = card.getAttribute('data-details') || 'No details available.';
+        const tags = card.getAttribute('data-tags')?.split(',') || [];
+        const icon = card.getAttribute('data-icon') || 'fa-project-diagram';
+
+        globalPopupTitle.textContent = title;
+        globalPopupDetails.innerHTML = `
+          <div class="global-popup-item">
+            <i class="fas ${icon}"></i>
+            <div class="global-popup-item-content">
+              <strong>${date}</strong>
+              <p>${details}</p>
+              <div class="global-popup-tags">
+                ${tags.map(tag => `<span class="global-popup-tag">${tag.trim()}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+        globalPopup.classList.add('active');
+      });
+    }
+
+    // View Project logic
+    if (viewProjectBtn && projectLink) {
+      viewProjectBtn.addEventListener('click', () => {
+        window.open(projectLink, '_blank'); // Open in a new tab
+      });
+    }
+  });
+};
 
       // Achievement Popup
       const initAchievementPopup = () => {
@@ -1835,23 +1853,76 @@
         const moreAboutMeCards = document.querySelectorAll('.more-about-me-card');
 
         const skills = [
-          { name: 'Leadership', details: 'I developed my leadership skills through founding \'Dear Future Luminary\' in 2025, where I guide students toward scholarships and growth opportunities.', icon: 'fa-crown' },
-          { name: 'Teamwork', details: 'I honed my teamwork skills during the NASA Space Apps Cairo Bootcamp in 2023. Working with a diverse group to solve real-world challenges.', icon: 'fa-users' },
-          { name: 'Adaptability', details: 'Being part of Soliya Global Circles in 2024 helped me become more adaptable. Facilitating discussions with people from different cultures.', icon: 'fa-sync-alt' },
-          { name: 'Problem-Solving', details: 'I sharpened my problem-solving skills during the Climate Science Olympiad 2024, where I won a gold medal.', icon: 'fa-puzzle-piece' },
-          { name: 'Time Management', details: 'Managing multiple roles, like being a Social Media Manager and a Mathematics Tutor in 2024, taught me how to balance my time.', icon: 'fa-clock' },
-          { name: 'Project Management', details: 'Organizing events for TEDxEtTagammo in 2023 gave me hands-on experience in project management.', icon: 'fa-tasks' },
-          { name: 'Coaching & Mentoring', details: 'I discovered my love for coaching while facilitating the Entrepreneurship Summer Camp in 2024.', icon: 'fa-chalkboard-teacher' },
-          { name: 'Effective Communication', details: 'My role as Head of Social Media for MAS MUN in 2023 improved my communication skills.', icon: 'fa-comments' }
-        ];
+  {
+    name: 'Leadership',
+    icon: 'fa-crown',
+    details: 'I stepped into leadership when I founded "Dear Future Luminary" in 2025 — mentoring students, building resources, and leading with purpose. It’s my way of sparking change.'
+  },
+  {
+    name: 'Teamwork',
+    icon: 'fa-users',
+    details: 'Teamwork really hit different at the NASA Space Apps Cairo Bootcamp in 2023. Collaborating with people from different fields taught me how to listen, adapt, and build great things together.'
+  },
+  {
+    name: 'Adaptability',
+    icon: 'fa-sync-alt',
+    details: 'Facilitating deep conversations in Soliya Global Circles in 2024 pushed me out of my comfort zone. I learned to adapt quickly to different perspectives and stay grounded through challenges.'
+  },
+  {
+    name: 'Problem-Solving',
+    icon: 'fa-puzzle-piece',
+    details: 'At the Climate Science Olympiad 2024, I tackled real global problems — and even won gold! That experience made me realize how much I love solving big, complex challenges.'
+  },
+  {
+    name: 'Time Management',
+    icon: 'fa-clock',
+    details: 'Balancing being a Social Media Manager, a Math Tutor, and a student in 2024? Yeah, that taught me *real* time management. Google Calendar became my best friend.'
+  },
+  {
+    name: 'Project Management',
+    icon: 'fa-tasks',
+    details: 'When I helped organize TEDxEtTagammo in 2023, I learned how to manage timelines, coordinate teams, and bring big ideas to life — all while keeping the vibe ✨professional but creative✨.'
+  },
+  {
+    name: 'Coaching & Mentoring',
+    icon: 'fa-chalkboard-teacher',
+    details: 'At the Entrepreneurship Summer Camp in 2024, I discovered how much I love mentoring — guiding others while watching them shine? That’s my kind of magic.'
+  },
+  {
+    name: 'Effective Communication',
+    icon: 'fa-comments',
+    details: 'Being Head of Social Media for MAS MUN in 2023 wasn’t just about posting — it was about *connecting* with people and sharing powerful stories that mattered.'
+  }
+];
 
-        const hobbies = [
-          { name: 'Tutoring & Mentoring', details: 'Tutoring brings me joy because I love seeing others grow.', icon: 'fa-chalkboard-teacher' },
-          { name: 'Astronomy & Stargazing', details: 'Stargazing feels magical to me! Last summer, I spent a night watching a meteor shower.', icon: 'fa-star' },
-          { name: 'Yoga & Mindfulness', details: 'Yoga helps me find peace. In 2024, I started practicing daily.', icon: 'fa-spa' },
-          { name: 'Fashion Styling', details: 'I adore fashion styling because it lets me express myself!', icon: 'fa-tshirt' },
-          { name: 'Hip-Hop & Latin Dancing', details: 'Dancing makes me feel alive! I joined a hip-hop dance class in 2023.', icon: 'fa-music' }
-        ];
+const hobbies = [
+  {
+    name: 'Tutoring & Mentoring',
+    icon: 'fa-chalkboard-teacher',
+    details: 'I really love tutoring. It makes me so happy to help someone understand something they’ve been struggling with. In 2024, I explained a math concept to a student, and when they finally got it and smiled — that moment literally made my day.'
+  },
+  {
+    name: 'Astronomy & Stargazing',
+    icon: 'fa-star',
+    details: 'I’ve always felt connected to the stars. Last summer, I watched a meteor shower with my friends, and we stayed up all night. It was honestly one of my favorite memories ever — just peace, sky, and good company.'
+  },
+  {
+    name: 'Yoga & Mindfulness',
+    icon: 'fa-spa',
+    details: 'Yoga helps me stay calm when life gets too much. I started doing it regularly in 2024, and now it’s my go-to whenever I feel stressed. Just 20 minutes and I feel like I can breathe again.'
+  },
+  {
+    name: 'Fashion Styling',
+    icon: 'fa-tshirt',
+    details: 'I love expressing myself through fashion. One time in 2023, I styled an outfit for a school event and got so many compliments — it really boosted my confidence and made me realize how much I enjoy it.'
+  },
+  {
+    name: 'Hip-Hop & Latin Dancing',
+    icon: 'fa-music',
+    details: 'I first tried dancing as a fun way to work out, especially hip-hop and Latin — kind of like cardio but cooler. I didn’t expect to fall in love with it, but now it’s one of my favorite things to do. It gives me so much energy and just makes me feel alive.'
+  }
+];
+
 
         const languages = [
           { name: 'Arabic', level: 'Native', details: 'Fluent in both written and spoken Arabic.', stars: 5, icon: 'fa-globe' },
